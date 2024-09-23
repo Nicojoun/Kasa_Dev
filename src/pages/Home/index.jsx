@@ -1,11 +1,9 @@
-import logo from '../assets/logo.svg';
-import '../styles/App.css';
+import '../../styles/App.css';  
 
-function App() {
+function Home() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           I enjoy eating ice creams on the moon.
         </p>
@@ -22,4 +20,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
