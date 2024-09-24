@@ -1,5 +1,3 @@
-import '../../assets/styles/App.scss';  
-
 function NotFound() {
   return (
     <div className="app">

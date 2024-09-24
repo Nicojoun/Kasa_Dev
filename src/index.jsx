@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router} from 'react-router-dom';
 
 import './assets/styles/index.scss';
-import './assets/styles/App.scss';
 
 import Header from './components/Header'; // Importer le composant Header
 import Footer from './components/Footer';

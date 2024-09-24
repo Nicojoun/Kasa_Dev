@@ -1,5 +1,3 @@
-import '../../assets/styles/App.scss';  
-
 function About() {
   return (
     <div className="app">

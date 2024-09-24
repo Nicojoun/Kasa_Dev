@@ -1,5 +1,3 @@
-import '../../assets/styles/App.scss';  
-
 function HousingSheet() {
   return (
     <div className="app">
