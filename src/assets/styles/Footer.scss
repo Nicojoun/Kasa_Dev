@@ -1,17 +1,18 @@
+@import 'variables'; // Importation des variables
+
 .footer {
-    background-color: black;
+    background-color: $primary-color;
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding: $padding-logo-white;
 
     &-logo {
-        width: 122px;;
+        width: $logo-width;
     }
 
     &-copyright {
-        color: white;
+        color: $secondary-color;
     }
 
   }

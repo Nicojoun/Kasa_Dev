@@ -1,24 +1,21 @@
+@import 'variables'; // Importation des variables
+
 .header {
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-right: 80px;
-    margin-left: 80px;
+    margin: $margin-logo-red;  // Les margins combinés en une seule ligne (top, right/left, bottom)
 
     &-nav {
         display: flex;
-        gap: 50px;
+        gap: $gap;
     }
 
     &-link {
-        text-decoration: none;
+        text-decoration: $link-decoration;
 
-          // Styles pour le lien au survol
+        // Styles pour le lien au survol
         &:hover {
-            text-decoration: underline; // Ajoute le soulignement au survol
+            text-decoration: $link-decoration-hover; // Ajoute le soulignement au survol
         }
     }
-
-
-  }
+}
