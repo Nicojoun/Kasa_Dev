@@ -1,0 +1,24 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 80px;
+    margin-left: 80px;
+
+    &-nav {
+        display: flex;
+        gap: 50px;
+    }
+
+    &-link {
+        text-decoration: none;
+
+          // Styles pour le lien au survol
+        &:hover {
+            text-decoration: underline; // Ajoute le soulignement au survol
+        }
+    }
+
+
+  }
