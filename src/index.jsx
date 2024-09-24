@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import './styles/index.css';
-import './styles/App.css';  
+import './styles/index.scss';
+import './styles/App.scss';  
 import Home from './pages/Home'; // Page d'accueil
 import About from './pages/About'; // page à propos
 import HousingSheet from './pages/HousingSheet'; // Composant pour la fiche de logement
