@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';  // Importation de Link pour la navigat
 
 function Footer() {
   return (
-    <div className='Footer'>
+    <div className='footer'>
       <Link to="/">  {/* Lien vers la page d'accueil */}
-        <img src={logo_footer} alt="Logo_Footer" className='Footer-logo' />  {/* Affichage de l'image */}
+        <img src={logo_footer} alt="Logo_Footer" className='footer-logo' />  {/* Affichage de l'image */}
       </Link>
-      <p className='Footer-copyright'>© 2020 Kasa. All rights reserved</p> {/* Affichage du copyright */}
+      <p className='footer-copyright'>© 2020 Kasa. All rights reserved</p> {/* Affichage du copyright */}
     </div>
   );
 }

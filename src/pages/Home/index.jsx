@@ -2,13 +2,13 @@ import '../../styles/App.scss';
 
 function Home() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="app">
+      <header className="app-header">
         <p>
           I enjoy eating ice creams on the moon.
         </p>
         <a
-          className="App-link"
+          className="app-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"

@@ -2,8 +2,8 @@ import '../../styles/App.scss';
 
 function About() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="app">
+      <header className="app-header">
         <p>
           à propos
         </p>
