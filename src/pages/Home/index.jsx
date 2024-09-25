@@ -1,21 +1,10 @@
-import '../../assets/styles/Home.scss';  
+import '../../assets/styles/Home.scss';
+import Banner from '../../components/Banner';  // Importation du composant Banner
 
 function Home() {
   return (
-    <div className="app">
-      <header className="app-header">
-        <p>
-          I enjoy eating ice creams on the moon.
-        </p>
-        <a
-          className="app-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <Banner />  {/* Affichage du composant Banner */}
     </div>
   );
 }
