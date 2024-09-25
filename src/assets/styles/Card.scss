@@ -1,0 +1,8 @@
+@import 'variables'; // Importation des variables
+
+.card {
+    background-color: $card-background-color;
+    width: $card-width;
+    height: $card-width;
+    border-radius: $card-border-radius;
+}

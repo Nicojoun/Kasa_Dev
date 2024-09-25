@@ -1,0 +1,7 @@
+@import 'variables'; // Importation des variables
+
+.superCard {
+    background-color:  $superCard-color;
+    width: $banner-width;     // Largeur de 90% de la taille de l'écran
+    margin: $banner-margin;   // Centrer la bannière horizontalement
+}

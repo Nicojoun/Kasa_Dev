@@ -4,14 +4,26 @@
     display: flex;
     justify-content: space-between;
     margin: $margin-logo-red;  // Les margins combinés en une seule ligne (top, right/left, bottom)
+    height: $logo-height;
+
+    &-header-logoLink {
+        height: $logo-height;
+    }
+
+    &-logo {
+        height: $logo-height;
+    }
 
     &-nav {
         display: flex;
         gap: $gap;
+        font: $font-nav; 
+        line-height: 34.22px; 
     }
 
     &-link {
         text-decoration: $link-decoration;
+        height: $logo-height;
 
         // Styles pour le lien au survol
         &:hover {
