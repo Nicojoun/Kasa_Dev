@@ -1,9 +1,11 @@
+import React from 'react';
 import '../../assets/styles/Card.scss';
 
-function Card() {
+function Card({ logement }) { // Récupérer le logement passé en prop
   return (
     <div className='card'>
-        <p>Ceci est ma putain de carte</p>
+      <h2>{logement.title}</h2> {/* Affichage du titre de la location */}
+      <p>{logement.cover}</p> {/* Affichage de l'image de la location */}
     </div>
   );
 }

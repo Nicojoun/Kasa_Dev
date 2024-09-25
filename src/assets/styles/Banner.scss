@@ -2,12 +2,13 @@
 
 .banner {
   position: relative;  // Pour positionner le texte au-dessus de l'image
-  background-image: url('../../assets/image/image_background.png'); // Applique l'image en arrière-plan
+  background-image: $banner-background-image; // Applique l'image en arrière-plan
   background-size: cover; // Pour couvrir toute la div
   background-position: center; // Centre l'image
   height: $banner-height; // Hauteur de la bannière
   width: $banner-width; // Largeur de 90% de la taille de l'écran
   margin: $banner-margin; // Centrer la bannière horizontalement
+  border-radius: 25px;
 
   &-text {
     position: absolute;
