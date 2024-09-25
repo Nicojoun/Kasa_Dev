@@ -1,9 +1,18 @@
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 import '../../assets/styles/Banner.scss';  
 
 function Banner() {
+  const location = useLocation();
+
+  // Choisir la classe en fonction de la route
+  const bannerClass = location.pathname === '/' ? 'banner' : 'banner2';
+
   return (
-    <div className='banner'>
-      <h1 className='banner-text'>Chez vous, partout et ailleurs</h1>  {/* Texte au-dessus de l'image */}
+    <div className={bannerClass}>
+      <h1 className='banner-text'>
+        {location.pathname === '/' ? "Chez vous, partout et ailleurs" : ""}
+      </h1>
     </div>
   );
 }

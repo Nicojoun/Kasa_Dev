@@ -1,11 +1,12 @@
+import Banner from '../../components/Banner';
+
 function About() {
   return (
-    <div className="app">
-      <header className="app-header">
+    <div>
+        <Banner />  {/* Affichage du composant Banner */}
         <p>
           à propos
         </p>
-      </header>
     </div>
   );
 }
