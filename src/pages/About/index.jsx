@@ -4,7 +4,7 @@ import ListCollapse from '../../components/ListCollapse';
 function About() {
   return (
     <div>
-        <Banner />  {/* Affichage du composant Banner */}
+         <Banner bannerClass="banner2" bannerText="" />  {/* Affichage du composant Banner */}
         <ListCollapse />
     </div>
   );

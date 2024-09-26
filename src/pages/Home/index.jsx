@@ -5,7 +5,7 @@ import SuperCard from '../../components/SuperCard';  // Importation du composant
 function Home() {
   return (
     <div>
-        <Banner />  {/* Affichage du composant Banner */}
+        <Banner bannerClass="banner" bannerText="Chez vous, partout et ailleurs" />  {/* Affichage du composant Banner */}
         <SuperCard />  {/* Affichage du composant SuperCard */}
     </div>
   );
