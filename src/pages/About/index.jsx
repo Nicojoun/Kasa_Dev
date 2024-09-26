@@ -1,11 +1,11 @@
 import Banner from '../../components/Banner';
-import ListCollapse from '../../components/ListCollapse';
+import Collapse from '../../components/Collapse';
 
 function About() {
   return (
     <div>
          <Banner bannerClass="banner2" bannerText="" />  {/* Affichage du composant Banner */}
-        <ListCollapse />
+        <Collapse />
     </div>
   );
 }

@@ -1,16 +1,23 @@
 @import 'variables'; // Importation des variables
 
 .collapse {
-    padding: 20px;
-    color: $secondary-color;
-    font: $font-nav;
+    padding-left: 10%;
+    padding-right: 10%;
 
-    &-item {
-        background-color: $tertiary-color;
-        height: 54px;
-        display: flex;
-        align-items: center;
-        padding-left: 10px;
-    }
+    &-object {
+        padding: 20px;
+         color: $secondary-color;
+         font: $font-nav;
+     }
+ 
+     &-item {
+         background-color: $tertiary-color;
+         height: 54px;
+         display: flex;
+         align-items: center;
+         padding-left: 10px;
+     }
+}   
 
-}
+
+
