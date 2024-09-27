@@ -1,0 +1,26 @@
+@import 'variables'; // Importation des variables
+
+.notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrer verticalement */
+    align-items: center; /* Centrer horizontalement */
+    margin-top: -5%;
+
+    &-404 {
+        color: $tertiary-color;
+        font: $font-404;
+    }
+
+    &-message {
+        font: $font-notFound-message;
+        color: $tertiary-color;
+        margin-top: -10%;
+        margin-bottom: 10%;
+    }
+
+    &-linkBackHome {
+        font: $font-notFound-backHome;
+        margin-bottom: 10%; 
+    }
+}
