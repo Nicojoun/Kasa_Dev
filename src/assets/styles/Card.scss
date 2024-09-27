@@ -6,16 +6,16 @@
     height: $card-width;
     border-radius: $card-border-radius;
 
-    &-image {
-            width: 100%;
-            height: 250px;
-            border-radius: $card-border-radius;
-      }
+  //   &-image {
+  //           width: 100%;
+  //           height: 250px;
+  //           border-radius: $card-border-radius;
+  //     }
 
-    &-title {
-        font: $card-font;
-        color: $secondary-color;
-        width: 50%;
-        margin-left: 15px;
-  }
+  //   &-title {
+  //       font: $card-font;
+  //       color: $secondary-color;
+  //       width: 50%;
+  //       margin-left: 15px;
+  // }
 }

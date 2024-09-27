@@ -1,0 +1,56 @@
+@import 'variables'; // Importation des variables
+
+.housingSheet {
+
+    &-image {
+        height: 415px;
+        width: $banner-width;
+        object-fit: cover; 
+        border-radius: $cover-border-radius;
+    }
+
+    &-title {
+        font: $font-notFound-message;
+        color: $tertiary-color;
+    }
+
+    &-location {
+        font: $font-notFound-backHome;
+    }
+
+    &-tagList {
+        display: flex;
+        gap: 10px;
+    }
+
+    &-tag {
+        background-color: $tertiary-color;
+        padding: $padding-tag;
+        border-radius: $card-border-radius;
+        font: $font-tag;
+        color: $secondary-color;
+    }
+
+    &-hostName {
+        font: $font-notFound-backHome;
+        color: $tertiary-color;
+    }
+
+    &-hostImage {
+        width: 50px;  // Largeur de l'image
+        height: 50px; // Hauteur de l'image
+        border-radius: 50%; // Pour rendre l'image ronde
+        object-fit: cover; // Pour éviter la déformation de l'image
+        margin-top: 5px; // Espacement au-dessus de la photo
+    }
+
+    &-star {
+        color: lightgray; // Couleur par défaut des étoiles
+        margin-right: 2px; // Espace entre les étoiles
+      }
+  
+    &-filled {
+        color: $tertiary-color; // Couleur des étoiles remplies
+    }
+
+}
