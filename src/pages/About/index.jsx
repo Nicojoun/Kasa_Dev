@@ -1,5 +1,6 @@
 import Banner from '../../components/Banner';
 import Collapse from '../../components/Collapse';
+import '../../assets/styles/About.scss';
 
 // Tableau des valeurs à passer au composant Collapse, propre à la page About
 const dataCollapse = [
@@ -11,9 +12,11 @@ const dataCollapse = [
 
 function About() {
   return (
-    <div>
+    <div className='about'>
       <Banner bannerClass="banner2" bannerText="" />  {/* Affichage du composant Banner */}
-      <Collapse data={dataCollapse} /> {/* Passer les données au composant Collapse */}
+      <div className='about-collapse'>
+        <Collapse data={dataCollapse} /> {/* Passer les données au composant Collapse */}
+      </div>
     </div>
   );
 }

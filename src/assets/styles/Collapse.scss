@@ -1,9 +1,7 @@
 @import 'variables'; // Importation des variables
 
 .collapse {
-    padding-left: 10%;
-    padding-right: 10%;
-
+    
     &-object {
         padding: 20px;
         color: $secondary-color;

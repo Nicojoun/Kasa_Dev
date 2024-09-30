@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'; // Utiliser useParams pour récup�
 import logements from '../../datas/logements.json'; // Importer les données des logements
 import '../../assets/styles/HousingSheet.scss';
 import Collapse from '../../components/Collapse';
+import Slideshow from '../../components/Slideshow'; // Importer le composant Slideshow
 
 function HousingSheet() {
   const { id } = useParams(); // Récupérer l'ID depuis les paramètres de l'URL
@@ -38,6 +39,9 @@ function HousingSheet() {
 
   return (
     <div className='housingSheet'>
+      {/* Intégration du Slideshow pour naviguer entre les logements */}
+      <Slideshow currentId={id} />
+
       <img className='housingSheet-image' src={logement.cover} alt={logement.title} /> {/* Affichage de l'image du logement */}
       <h1 className='housingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
       <h2 className='housingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
@@ -61,10 +65,9 @@ function HousingSheet() {
       </div>
 
       {/* Affichage des descriptions et des équipements avec Collapse */}
-      <div>
+      <div className='housingSheet-divCollapse'>
         <Collapse className='housingSheet-collapse' data={dataCollapse} /> {/* Passer les données au composant Collapse */}
       </div>
-
     </div>
   );
 }
