@@ -3,15 +3,7 @@ import '../../assets/styles/Collapse.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Importer le composant FontAwesomeIcon
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'; // Importer l'icône spécifique
 
-// Tableau des valeurs à passer au composant Collapse
-const dataCollapse = [
-  { title: 'Fiabilité', content: 'Description de la fiabilité' },
-  { title: 'Respect', content: 'Description du respect' },
-  { title: 'Service', content: 'Description du service' },
-  { title: 'Sécurité', content: 'Description de la sécurité' }
-];
-
-function Collapse() {
+function Collapse({ data }) {
   const [activeIndexes, setActiveIndexes] = useState([]); // État pour gérer plusieurs index actifs
 
   // Fonction pour gérer le clic sur un élément
@@ -27,7 +19,7 @@ function Collapse() {
 
   return (
     <div className='collapse'>
-      {dataCollapse.map((item, index) => (
+      {data.map((item, index) => (
         <div className='collapse-object' key={index}>
           <div className='collapse-item' onClick={() => handleToggle(index)}>
             {item.title} {/* Affichage du titre de l'item */}

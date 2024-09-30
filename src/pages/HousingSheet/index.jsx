@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom'; // Utiliser useParams pour récupérer l'ID de l'URL
 import logements from '../../datas/logements.json'; // Importer les données des logements
 import '../../assets/styles/HousingSheet.scss';
+import Collapse from '../../components/Collapse';
 
 function HousingSheet() {
   const { id } = useParams(); // Récupérer l'ID depuis les paramètres de l'URL
@@ -19,6 +20,21 @@ function HousingSheet() {
     }
     return stars;
   };
+
+  // Données pour le Collapse
+  const dataCollapse = [
+    { title: 'Description', content: logement.description }, // Ajout de la description
+    { 
+      title: 'Équipements', 
+      content: (
+        <ul>
+          {logement.equipments.map((equipment, index) => (
+            <li key={index}>{equipment}</li>
+          ))}
+        </ul>
+      ) // Ajout des équipements en tant que liste
+    },
+  ];
 
   return (
     <div className='housingSheet'>
@@ -42,6 +58,11 @@ function HousingSheet() {
       {/* Affichage de la note sous forme d'étoiles */}
       <div className='housingSheet-rating'>
         {renderStars(logement.rating)} {/* Appel de la fonction pour afficher les étoiles */}
+      </div>
+
+      {/* Affichage des descriptions et des équipements avec Collapse */}
+      <div>
+        <Collapse className='housingSheet-collapse' data={dataCollapse} /> {/* Passer les données au composant Collapse */}
       </div>
 
     </div>
