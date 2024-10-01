@@ -1,4 +1,3 @@
-// HousingSheet.js
 import React from 'react';
 import { useParams } from 'react-router-dom'; // Utiliser useParams pour récupérer l'ID de l'URL
 import logements from '../../datas/logements.json'; // Importer les données des logements
@@ -6,10 +5,16 @@ import '../../assets/styles/HousingSheet.scss';
 import Collapse from '../../components/Collapse';
 import Slideshow from '../../components/Slideshow'; // Importer le composant Slideshow
 import Banner from '../../components/Banner'; // Importer le composant Banner
+import { width } from '@fortawesome/free-solid-svg-icons/fa0';
 
 function HousingSheet() {
   const { id } = useParams(); // Récupérer l'ID depuis les paramètres de l'URL
   const logement = logements.find(log => log.id === id); // Trouver le logement correspondant
+
+  // Vérifie si le logement existe
+  if (!logement) {
+    return <div>Logement non trouvé.</div>; // Affiche un message d'erreur si le logement n'est pas trouvé
+  }
 
   // Fonction pour afficher les étoiles en fonction de la note
   const renderStars = (rating) => {
@@ -41,14 +46,10 @@ function HousingSheet() {
 
   return (
     <div className='housingSheet'>
-
-
       {/* Utilisation du composant Banner avec l'image du logement */}
       <Banner bannerClass="bannerHousingSheet" bannerText="">
-
         {/* Intégration du Slideshow pour naviguer entre les logements */}
         <Slideshow currentId={id} />
-
         <img className='bannerHousingSheet-image' src={logement.cover} alt={logement.title} />
         <h1 className='bannerHousingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
         <h2 className='bannerHousingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
@@ -70,13 +71,20 @@ function HousingSheet() {
         <div className='bannerHousingSheet-rating'>
           {renderStars(logement.rating)} {/* Appel de la fonction pour afficher les étoiles */}
         </div>
-
       </Banner>  
 
-      {/* Affichage des descriptions et des équipements avec Collapse */}
-      <div className='housingSheet-divCollapse'>
-        <Collapse className='housingSheet-collapse' data={dataCollapse} /> {/* Passer les données au composant Collapse */}
+      <div className='housingSheet-wraper'>    
+        {/* Boucle pour afficher chaque élément du tableau dans un Collapse */}
+        {dataCollapse.map((item, index) => (
+          <Collapse className='housingSheet-collapse' 
+            key={index} 
+            title={item.title} 
+            content={item.content} 
+            collapseStyle={{width: '45%', }}  
+          /> 
+        ))}
       </div>
+
     </div>
   );
 }

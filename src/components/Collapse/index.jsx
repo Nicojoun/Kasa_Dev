@@ -7,8 +7,8 @@ function Collapse({ title, content, collapseStyle  }) {
   const [open, setOpen] = useState(false); // État pour gérer l'ouverture/fermeture d'un seul élément
 
   return (
-    <div className={collapseStyle} onClick={() => setOpen(o => !o)}>
-      <div className="collapse-title">
+    <div style={collapseStyle} className="collapse" >
+      <div className="collapse-title" onClick={() => setOpen(o => !o)}>
         <div>{title}</div>
         {/* Changer l'icône selon l'état open */}
         <FontAwesomeIcon icon={open ? faChevronDown : faChevronUp} style={{ color: '#ffffff' }} />
@@ -16,7 +16,7 @@ function Collapse({ title, content, collapseStyle  }) {
       {/* Afficher le contenu uniquement si open est true */}
       {open && (
         <div className="collapse-content">
-          <p className="collapse-text" style={{ color: '#000000' }}>
+          <p className="collapse-text">
             {content}
           </p>
         </div>

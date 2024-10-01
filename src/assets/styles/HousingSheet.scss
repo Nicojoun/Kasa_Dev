@@ -72,6 +72,11 @@
         background-color: aquamarine;
     }
 
-
+    &-wraper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: $gap;
+    }
 
 }

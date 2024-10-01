@@ -2,4 +2,7 @@
 
 .index {
   height: $height-index; // Étend le conteneur sur toute la hauteur
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
