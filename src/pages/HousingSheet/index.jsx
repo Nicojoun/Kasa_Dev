@@ -1,9 +1,11 @@
+// HousingSheet.js
 import React from 'react';
 import { useParams } from 'react-router-dom'; // Utiliser useParams pour récupérer l'ID de l'URL
 import logements from '../../datas/logements.json'; // Importer les données des logements
 import '../../assets/styles/HousingSheet.scss';
 import Collapse from '../../components/Collapse';
 import Slideshow from '../../components/Slideshow'; // Importer le composant Slideshow
+import Banner from '../../components/Banner'; // Importer le composant Banner
 
 function HousingSheet() {
   const { id } = useParams(); // Récupérer l'ID depuis les paramètres de l'URL
@@ -42,7 +44,13 @@ function HousingSheet() {
       {/* Intégration du Slideshow pour naviguer entre les logements */}
       <Slideshow currentId={id} />
 
-      <img className='housingSheet-image' src={logement.cover} alt={logement.title} /> {/* Affichage de l'image du logement */}
+      {/* Utilisation du composant Banner avec l'image du logement */}
+      <Banner 
+        bannerClass="banner" // Classe CSS définie pour le style général de la bannière
+        bannerImage={logement.cover} // Image du logement comme arrière-plan
+        bannerText="" // Pas de texte sur cette bannière
+      />
+
       <h1 className='housingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
       <h2 className='housingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
 
