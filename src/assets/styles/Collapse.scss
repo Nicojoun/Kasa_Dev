@@ -1,14 +1,11 @@
 @import 'variables'; // Importation des variables
 
 .collapse {
-    
-    &-object {
-        padding: 20px;
-        color: $secondary-color;
-        font: $font-nav;
-     }
- 
-    &-item {
+    padding: 20px;
+    color: $secondary-color;
+    font: $font-nav;
+
+    &-title {
         background-color: $tertiary-color;
         height: 54px;
         display: flex;
@@ -31,7 +28,11 @@
         font-size: 20px;
     }
 
-}   
+    }
+ 
+
+
+
 
 
 
