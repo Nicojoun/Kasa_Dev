@@ -16,7 +16,7 @@ function HousingSheet() {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       stars.push(
-        <span key={i} className={`housingSheet-star ${i <= rating ? 'housingSheet-filled' : ''}`}>
+        <span key={i} className={`bannerHousingSheet-star ${i <= rating ? 'bannerHousingSheet-filled' : ''}`}>
           ★
         </span>
       );
@@ -41,36 +41,37 @@ function HousingSheet() {
 
   return (
     <div className='housingSheet'>
-      {/* Intégration du Slideshow pour naviguer entre les logements */}
-      <Slideshow currentId={id} />
+
 
       {/* Utilisation du composant Banner avec l'image du logement */}
-      <Banner 
-        bannerClass="banner" // Classe CSS définie pour le style général de la bannière
-        bannerImage={logement.cover} // Image du logement comme arrière-plan
-        bannerText="" // Pas de texte sur cette bannière
-      />
+      <Banner bannerClass="bannerHousingSheet" bannerText="">
 
-      <h1 className='housingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
-      <h2 className='housingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
+        {/* Intégration du Slideshow pour naviguer entre les logements */}
+        <Slideshow currentId={id} />
 
-      {/* Affichage des tags */}
-      <div className='housingSheet-tagList'>
-        {logement.tags.map((tag, index) => (
-          <span key={index} className='housingSheet-tag'>{tag}</span>  // Affichage de chaque tag
-        ))}
-      </div>
+        <img className='bannerHousingSheet-image' src={logement.cover} alt={logement.title} />
+        <h1 className='bannerHousingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
+        <h2 className='bannerHousingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
 
-      {/* Affichage du nom et de la photo de l'hôte */}
-      <div className='housingSheet-host'>
-        <span className='housingSheet-hostName'>{logement.host.name}</span> {/* Nom de l'hôte */}
-        <img className='housingSheet-hostImage' src={logement.host.picture} alt={logement.host.name} /> {/* Photo de l'hôte */}
-      </div>
+        {/* Affichage des tags */}
+        <div className='bannerHousingSheet-tagList'>
+          {logement.tags.map((tag, index) => (
+            <span key={index} className='bannerHousingSheet-tag'>{tag}</span>  // Affichage de chaque tag
+          ))}
+        </div>
 
-      {/* Affichage de la note sous forme d'étoiles */}
-      <div className='housingSheet-rating'>
-        {renderStars(logement.rating)} {/* Appel de la fonction pour afficher les étoiles */}
-      </div>
+        {/* Affichage du nom et de la photo de l'hôte */}
+        <div className='bannerHousingSheet-host'>
+          <span className='bannerHousingSheet-hostName'>{logement.host.name}</span> {/* Nom de l'hôte */}
+          <img className='bannerHousingSheet-hostImage' src={logement.host.picture} alt={logement.host.name} /> {/* Photo de l'hôte */}
+        </div>
+
+        {/* Affichage de la note sous forme d'étoiles */}
+        <div className='bannerHousingSheet-rating'>
+          {renderStars(logement.rating)} {/* Appel de la fonction pour afficher les étoiles */}
+        </div>
+
+      </Banner>  
 
       {/* Affichage des descriptions et des équipements avec Collapse */}
       <div className='housingSheet-divCollapse'>

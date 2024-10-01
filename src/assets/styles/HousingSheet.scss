@@ -1,6 +1,15 @@
 @import 'variables'; // Importation des variables
 
-.housingSheet {
+.bannerHousingSheet{
+    position: relative;  // Pour positionner le texte au-dessus de l'image
+    background-size: cover; // Pour couvrir toute la div
+    background-position: center; // Centre l'image
+    height: $banner-height; // Hauteur de la bannière
+    width: $banner-width; // Largeur de 90% de la taille de l'écran
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 500px;
+    border-radius: 25px;
 
     &-image {
         height: 415px;
@@ -53,12 +62,16 @@
         color: $tertiary-color; // Couleur des étoiles remplies
     }
 
+
+
+}
+
+.housingSheet {
+
     &-divCollapse {
         background-color: aquamarine;
     }
 
-    &-collapse {
 
-    }
 
 }

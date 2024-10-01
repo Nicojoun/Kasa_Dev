@@ -1,34 +1,37 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Utiliser useNavigate pour la navigation entre les pages de logements
-import logements from '../../datas/logements.json'; // Importer les logements
+import { useNavigate } from 'react-router-dom';
+import logements from '../../datas/logements.json';
+import '../../assets/styles/Slideshow.scss';
+
+// Importation des icônes Font Awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 function Slideshow({ currentId }) {
   const navigate = useNavigate();
-  const currentIndex = logements.findIndex(logement => logement.id === currentId); // Trouver l'index du logement actuel
+  const currentIndex = logements.findIndex(logement => logement.id === currentId);
   const [currentSlide, setCurrentSlide] = useState(currentIndex);
 
-  // Fonction pour passer au logement précédent
   const prevSlide = () => {
     const prevIndex = (currentSlide - 1 + logements.length) % logements.length;
     setCurrentSlide(prevIndex);
-    navigate(`/housing/${logements[prevIndex].id}`); // Naviguer vers le logement précédent
+    navigate(`/housing/${logements[prevIndex].id}`);
   };
 
-  // Fonction pour passer au logement suivant
   const nextSlide = () => {
     const nextIndex = (currentSlide + 1) % logements.length;
     setCurrentSlide(nextIndex);
-    navigate(`/housing/${logements[nextIndex].id}`); // Naviguer vers le logement suivant
+    navigate(`/housing/${logements[nextIndex].id}`);
   };
 
   return (
     <div className="slideshow">
-      <button className="slideshow-button prev" onClick={prevSlide}>
+      <p className="slideshow-buttonPrev" onClick={prevSlide}>
         ❮ {/* Chevron gauche */}
-      </button>
-      <button className="slideshow-button next" onClick={nextSlide}>
+      </p>
+      <p className="slideshow-buttonNext" onClick={nextSlide}>
         ❯ {/* Chevron droit */}
-      </button>
+      </p>
     </div>
   );
 }
