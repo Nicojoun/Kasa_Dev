@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom'; // Utiliser useParams pour récupérer l'ID de l'URL
 import logements from '../../datas/logements.json'; // Importer les données des logements
 import '../../assets/styles/HousingSheet.scss';
@@ -12,11 +12,7 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 function HousingSheet() {
   const { id } = useParams(); // Récupérer l'ID depuis les paramètres de l'URL
   const logement = logements.find(log => log.id === id); // Trouver le logement correspondant
-
-  // Vérifie si le logement existe
-  if (!logement) {
-    return <div>Logement non trouvé.</div>; // Affiche un message d'erreur si le logement n'est pas trouvé
-  }
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   // Données pour le Collapse
   const dataCollapse = [
@@ -33,20 +29,26 @@ function HousingSheet() {
     },
   ];
 
+  const totalSlides = logement.pictures.length;
+
   return (
     <div className='housingSheet'>
       {/* Utilisation du composant Banner avec l'image du logement */}
       <Banner bannerClass="bannerHousingSheet" bannerText="">
+
         {/* Intégration du Slideshow pour naviguer entre les images du logement */}
         <Slideshow>
           {/* Chevron gauche */}
-          <FontAwesomeIcon icon={faChevronLeft} className="slideshow-buttonPrev"/>
+          <FontAwesomeIcon icon={faChevronLeft} className="slideshow-buttonPrev" onClick={() => setCurrentSlide((currentSlide - 1 + totalSlides) % totalSlides)} />
           {logement.pictures.map((picture, index) => (
             <img key={index} className='bannerHousingSheet-image' src={picture} alt={`Slide ${index + 1}`} />
           ))}
+          {/* Affichage de la numérotation en tant que children */}
+          <p className="slideshow-counter">{currentSlide + 1}/{totalSlides}</p>
           {/* Chevron droit */}
-          <FontAwesomeIcon icon={faChevronRight} className="slideshow-buttonNext" />
+          <FontAwesomeIcon icon={faChevronRight} className="slideshow-buttonNext" onClick={() => setCurrentSlide((currentSlide + 1) % totalSlides)} />
         </Slideshow> 
+
         <h1 className='bannerHousingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
         <h2 className='bannerHousingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
 
