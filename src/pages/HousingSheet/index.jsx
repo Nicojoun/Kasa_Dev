@@ -5,7 +5,7 @@ import '../../assets/styles/HousingSheet.scss';
 import Collapse from '../../components/Collapse';
 import Slideshow from '../../components/Slideshow'; // Importer le composant Slideshow
 import Banner from '../../components/Banner'; // Importer le composant Banner
-import Tag from '../../components/Tag'; // Importer le composant Tag
+import Rating from '../../components/Rating'; // Importer le composant Rating
 
 function HousingSheet() {
   const { id } = useParams(); // Récupérer l'ID depuis les paramètres de l'URL
@@ -55,9 +55,7 @@ function HousingSheet() {
         </div>
 
         {/* Affichage de la note sous forme d'étoiles avec Tag */}
-        <div className='bannerHousingSheet-star'>
-          <Tag rating={logement.rating} /> {/* Utilisation du composant Tag pour afficher les étoiles */}
-        </div>
+        <Rating rating={logement.rating} empty='bannerHousingSheet-empty' filled='bannerHousingSheet-filled'/> {/* Utilisation du composant Tag pour afficher les étoiles */}
       </Banner>  
 
       <div className='housingSheet-wraper'>    
