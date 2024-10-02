@@ -14,6 +14,11 @@ function HousingSheet() {
   const logement = logements.find(log => log.id === id); // Trouver le logement correspondant
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Vérifie si le logement existe
+  if (!logement) {
+    return <div>Logement non trouvé.</div>; // Affiche un message d'erreur si le logement n'est pas trouvé
+  }
+
   // Données pour le Collapse
   const dataCollapse = [
     { title: 'Description', content: logement.description }, // Ajout de la description
@@ -38,15 +43,33 @@ function HousingSheet() {
 
         {/* Intégration du Slideshow pour naviguer entre les images du logement */}
         <Slideshow>
-          {/* Chevron gauche */}
-          <FontAwesomeIcon icon={faChevronLeft} className="slideshow-buttonPrev" onClick={() => setCurrentSlide((currentSlide - 1 + totalSlides) % totalSlides)} />
+          {totalSlides > 1 && (
+            <>
+              {/* Chevron gauche */}
+              <FontAwesomeIcon 
+                icon={faChevronLeft} 
+                className="slideshow-buttonPrev" 
+                onClick={() => setCurrentSlide((currentSlide - 1 + totalSlides) % totalSlides)}
+                style={{zIndex: '2', position: 'absolute', top: '75%', fontSize: '100px', color: 'white'}} 
+              />
+              {/* Affichage de la numérotation en tant que children */}
+              <p className="slideshow-counter"
+                style={{ position: 'absolute', right: '50%', top: '160%', color: 'white', zIndex: '2' }}
+              >
+                {currentSlide + 1}/{totalSlides}
+              </p>
+              {/* Chevron droit */}
+              <FontAwesomeIcon 
+                icon={faChevronRight} 
+                className="slideshow-buttonNext" 
+                onClick={() => setCurrentSlide((currentSlide + 1) % totalSlides)}
+                style={{zIndex: '2', position: 'absolute', top: '75%', right: '0.3%', fontSize: '100px', color: 'white'}}  
+              />
+            </>
+          )}
           {logement.pictures.map((picture, index) => (
-            <img key={index} className='bannerHousingSheet-image' src={picture} alt={`Slide ${index + 1}`} />
+            <img key={index} className='bannerHousingSheet-image' src={picture} alt={`Slide ${index + 1}`} style={{zIndex: '1'}} />
           ))}
-          {/* Affichage de la numérotation en tant que children */}
-          <p className="slideshow-counter">{currentSlide + 1}/{totalSlides}</p>
-          {/* Chevron droit */}
-          <FontAwesomeIcon icon={faChevronRight} className="slideshow-buttonNext" onClick={() => setCurrentSlide((currentSlide + 1) % totalSlides)} />
         </Slideshow> 
 
         <h1 className='bannerHousingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
