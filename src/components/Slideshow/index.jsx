@@ -1,37 +1,38 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import logements from '../../datas/logements.json';
 import '../../assets/styles/Slideshow.scss';
 
-// Importation des icônes Font Awesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+function Slideshow({ children }) {
+  const [currentSlide, setCurrentSlide] = useState(0); // Gestion de l'index de l'élément actuelle
+  const totalSlides = React.Children.count(children) - 2; // Nombre total de slides (moins les deux chevrons)
 
-function Slideshow({ currentId }) {
-  const navigate = useNavigate();
-  const currentIndex = logements.findIndex(logement => logement.id === currentId);
-  const [currentSlide, setCurrentSlide] = useState(currentIndex);
+  // Séparation des chevrons et des éléments dans le tableau `children`
+  const slides = React.Children.toArray(children).filter(child => child.type === 'img'); // Filtrer les éléments
+  const chevrons = React.Children.toArray(children).filter(child => child.type !== 'img'); // Filtrer les chevrons
 
   const prevSlide = () => {
-    const prevIndex = (currentSlide - 1 + logements.length) % logements.length;
-    setCurrentSlide(prevIndex);
-    navigate(`/housing/${logements[prevIndex].id}`);
+    const prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+    setCurrentSlide(prevIndex); // Passer à l'élément précédente
   };
 
   const nextSlide = () => {
-    const nextIndex = (currentSlide + 1) % logements.length;
-    setCurrentSlide(nextIndex);
-    navigate(`/housing/${logements[nextIndex].id}`);
+    const nextIndex = (currentSlide + 1) % totalSlides;
+    setCurrentSlide(nextIndex); // Passer à l'élément suivante
   };
 
   return (
     <div className="slideshow">
-      <p className="slideshow-buttonPrev" onClick={prevSlide}>
-        ❮ {/* Chevron gauche */}
-      </p>
-      <p className="slideshow-buttonNext" onClick={nextSlide}>
-        ❯ {/* Chevron droit */}
-      </p>
+      {/* Chevron gauche */}
+      <span onClick={prevSlide}>
+        {chevrons[0]} {/* Le premier enfant qui n'est pas une élément */}
+      </span>
+      
+      {/* Affichage de l'élément courante */}
+        {slides[currentSlide]} {/* Affichage de l'élément correspondant au slide actuel */}
+
+      {/* Chevron droit */}
+      <span onClick={nextSlide}>
+        {chevrons[1]} {/* Le deuxième enfant qui n'est pas un élément */}
+      </span>
     </div>
   );
 }

@@ -6,6 +6,8 @@ import Collapse from '../../components/Collapse';
 import Slideshow from '../../components/Slideshow'; // Importer le composant Slideshow
 import Banner from '../../components/Banner'; // Importer le composant Banner
 import Rating from '../../components/Rating'; // Importer le composant Rating
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 function HousingSheet() {
   const { id } = useParams(); // Récupérer l'ID depuis les paramètres de l'URL
@@ -35,9 +37,16 @@ function HousingSheet() {
     <div className='housingSheet'>
       {/* Utilisation du composant Banner avec l'image du logement */}
       <Banner bannerClass="bannerHousingSheet" bannerText="">
-        {/* Intégration du Slideshow pour naviguer entre les logements */}
-        <Slideshow currentId={id} />
-        <img className='bannerHousingSheet-image' src={logement.cover} alt={logement.title} />
+        {/* Intégration du Slideshow pour naviguer entre les images du logement */}
+        <Slideshow>
+          {/* Chevron gauche */}
+          <FontAwesomeIcon icon={faChevronLeft} className="slideshow-buttonPrev"/>
+          {logement.pictures.map((picture, index) => (
+            <img key={index} className='bannerHousingSheet-image' src={picture} alt={`Slide ${index + 1}`} />
+          ))}
+          {/* Chevron droit */}
+          <FontAwesomeIcon icon={faChevronRight} className="slideshow-buttonNext" />
+        </Slideshow> 
         <h1 className='bannerHousingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
         <h2 className='bannerHousingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
 

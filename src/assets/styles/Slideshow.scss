@@ -3,15 +3,15 @@
 .slideshow {
     display: flex;
     justify-content: space-between;
-    position: relative; 
-    top: 240px;  
 
     &-buttonPrev {
-
+        position: $slideShow-button-position; 
+        top: $slideShow-button-top;
     }
 
     &-buttonNext {
-
+        position: $slideShow-button-position; 
+        top: $slideShow-button-top;
     }
 
 }
