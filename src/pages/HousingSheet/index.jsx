@@ -5,7 +5,7 @@ import '../../assets/styles/HousingSheet.scss';
 import Collapse from '../../components/Collapse';
 import Slideshow from '../../components/Slideshow'; // Importer le composant Slideshow
 import Banner from '../../components/Banner'; // Importer le composant Banner
-import { width } from '@fortawesome/free-solid-svg-icons/fa0';
+import Tag from '../../components/Tag'; // Importer le composant Tag
 
 function HousingSheet() {
   const { id } = useParams(); // Récupérer l'ID depuis les paramètres de l'URL
@@ -15,19 +15,6 @@ function HousingSheet() {
   if (!logement) {
     return <div>Logement non trouvé.</div>; // Affiche un message d'erreur si le logement n'est pas trouvé
   }
-
-  // Fonction pour afficher les étoiles en fonction de la note
-  const renderStars = (rating) => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <span key={i} className={`bannerHousingSheet-star ${i <= rating ? 'bannerHousingSheet-filled' : ''}`}>
-          ★
-        </span>
-      );
-    }
-    return stars;
-  };
 
   // Données pour le Collapse
   const dataCollapse = [
@@ -67,9 +54,9 @@ function HousingSheet() {
           <img className='bannerHousingSheet-hostImage' src={logement.host.picture} alt={logement.host.name} /> {/* Photo de l'hôte */}
         </div>
 
-        {/* Affichage de la note sous forme d'étoiles */}
-        <div className='bannerHousingSheet-rating'>
-          {renderStars(logement.rating)} {/* Appel de la fonction pour afficher les étoiles */}
+        {/* Affichage de la note sous forme d'étoiles avec Tag */}
+        <div className='bannerHousingSheet-star'>
+          <Tag rating={logement.rating} /> {/* Utilisation du composant Tag pour afficher les étoiles */}
         </div>
       </Banner>  
 
@@ -80,7 +67,7 @@ function HousingSheet() {
             key={index} 
             title={item.title} 
             content={item.content} 
-            collapseStyle={{width: '45%', }}  
+            collapseStyle={{ width: '45%' }}  
           /> 
         ))}
       </div>
