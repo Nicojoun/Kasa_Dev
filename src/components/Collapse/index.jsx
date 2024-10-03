@@ -1,26 +1,27 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import '../../assets/styles/Collapse.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Importer le composant FontAwesomeIcon
-import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'; // Importer l'icône spécifique
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons'; // Utiliser un seul icône
 
-function Collapse({ title, content, collapseStyle  }) {
-  const [open, setOpen] = useState(false); // État pour gérer l'ouverture/fermeture d'un seul élément
+function Collapse({ title, content, collapseStyle }) {
+  const [open, setOpen] = useState(false); // État pour gérer l'ouverture/fermeture
+  const contentRef = useRef(null); // Utilisation de useRef pour accéder à la hauteur du contenu
 
   return (
-    <div style={collapseStyle} className="collapse" >
-      <div className="collapse-title" onClick={() => setOpen(o => !o)}>
+    <div style={collapseStyle} className="collapse">
+      <div className="collapse-title">
         <div>{title}</div>
-        {/* Changer l'icône selon l'état open */}
-        <FontAwesomeIcon icon={open ? faChevronDown : faChevronUp} style={{ color: '#ffffff' }} />
+        {/* Ajouter une classe pour gérer la rotation du chevron */}
+        <FontAwesomeIcon
+          onClick={() => setOpen(o => !o)}
+          icon={faChevronUp}
+          className={`collapse-chevron ${open ? 'collapse-chevronRotate' : ''}`} // Appliquer la rotation conditionnellement
+        />
       </div>
-      {/* Afficher le contenu uniquement si open est true */}
-      {open && (
-        <div className="collapse-content">
-          <div className="collapse-text">
-            {content}
-          </div>
-        </div>
-      )}
+      {/* Contenu déroulant */}
+      <div className={`collapse-content ${open ? 'collapse-open' : ''}`}>
+        <div className="collapse-text">{content}</div>
+      </div>
     </div>
   );
 }
