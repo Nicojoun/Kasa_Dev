@@ -24,6 +24,7 @@
     &-link {
         text-decoration: $link-decoration;
         height: $logo-height;
+        color: $primary-color;
 
         // Styles pour le lien au survol
         &:hover {

@@ -1,19 +1,32 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom'; // Utiliser useParams pour récupérer l'ID de l'URL
-import logements from '../../datas/logements.json'; // Importer les données des logements
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom'; // Import de useNavigate pour la redirection
+import logements from '../../datas/logements.json'; // Import des données
 import '../../assets/styles/HousingSheet.scss';
 import Collapse from '../../components/Collapse';
-import Slideshow from '../../components/Slideshow'; // Importer le composant Slideshow
-import Banner from '../../components/Banner'; // Importer le composant Banner
-import Rating from '../../components/Rating'; // Importer le composant Rating
-import Tag from '../../components/Tag'; // Importer le composant Tag
+import Slideshow from '../../components/Slideshow'; // Import du composant Slideshow
+import Banner from '../../components/Banner'; // Import du composant Banner
+import Rating from '../../components/Rating'; // Import du composant Rating
+import Tag from '../../components/Tag'; // Import du composant Tag
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 function HousingSheet() {
-  const { id } = useParams(); // Récupérer l'ID depuis les paramètres de l'URL
-  const logement = logements.find(log => log.id === id); // Trouver le logement correspondant
+  const { id } = useParams(); // Récupération de l'ID depuis les paramètres de l'URL
+  const logement = logements.find(log => log.id === id); // Recherche du logement correspondant
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate(); // Pour la redirection
+
+  useEffect(() => {
+    // Si le logement n'est pas trouvé, redirection vers la page NotFound
+    if (!logement) {
+      navigate('/notfound'); // Redirection vers la page NotFound
+    }
+  }, [logement, navigate]);
+
+  // Si le logement n'est pas trouvé, ne rien afficher (car on sera redirigé)
+  if (!logement) {
+    return null;
+  }
 
   // Données pour le Collapse
   const dataCollapse = [
