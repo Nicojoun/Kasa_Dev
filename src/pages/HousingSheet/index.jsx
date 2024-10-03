@@ -6,6 +6,7 @@ import Collapse from '../../components/Collapse';
 import Slideshow from '../../components/Slideshow'; // Importer le composant Slideshow
 import Banner from '../../components/Banner'; // Importer le composant Banner
 import Rating from '../../components/Rating'; // Importer le composant Rating
+import Tag from '../../components/Tag'; // Importer le composant Tag
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,20 +15,15 @@ function HousingSheet() {
   const logement = logements.find(log => log.id === id); // Trouver le logement correspondant
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Vérifie si le logement existe
-  if (!logement) {
-    return <div>Logement non trouvé.</div>; // Affiche un message d'erreur si le logement n'est pas trouvé
-  }
-
   // Données pour le Collapse
   const dataCollapse = [
-    { title: 'Description', content: logement.description }, // Ajout de la description
+    { title: 'Description', content: (<p>{logement.description}</p> ) }, // Ajout de la description
     { 
       title: 'Équipements', 
       content: (
         <ul>
           {logement.equipments.map((equipment, index) => (
-            <li key={index}>{equipment}</li>
+            <li key={index} style={{listStyle: 'none', position: 'relative', right: '5%'}}>{equipment}</li>
           ))}
         </ul>
       ) // Ajout des équipements en tant que liste
@@ -40,7 +36,6 @@ function HousingSheet() {
     <div className='housingSheet'>
       {/* Utilisation du composant Banner avec l'image du logement */}
       <Banner bannerClass="bannerHousingSheet" bannerText="">
-
         {/* Intégration du Slideshow pour naviguer entre les images du logement */}
         <Slideshow>
           {totalSlides > 1 && (
@@ -50,7 +45,7 @@ function HousingSheet() {
                 icon={faChevronLeft} 
                 className="slideshow-buttonPrev" 
                 onClick={() => setCurrentSlide((currentSlide - 1 + totalSlides) % totalSlides)}
-                style={{zIndex: '2', position: 'absolute', top: '75%', fontSize: '100px', color: 'white'}} 
+                style={{zIndex: '2', position: 'absolute', top: '75%', left: '2%' , fontSize: '100px', color: 'white'}} 
               />
               {/* Affichage de la numérotation en tant que children */}
               <p className="slideshow-counter"
@@ -63,7 +58,7 @@ function HousingSheet() {
                 icon={faChevronRight} 
                 className="slideshow-buttonNext" 
                 onClick={() => setCurrentSlide((currentSlide + 1) % totalSlides)}
-                style={{zIndex: '2', position: 'absolute', top: '75%', right: '0.3%', fontSize: '100px', color: 'white'}}  
+                style={{zIndex: '2', position: 'absolute', top: '75%', right: '2%', fontSize: '100px', color: 'white'}}  
               />
             </>
           )}
@@ -75,10 +70,12 @@ function HousingSheet() {
         <h1 className='bannerHousingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
         <h2 className='bannerHousingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
 
-        {/* Affichage des tags */}
+        {/* Affichage des tags avec le composant Tag */}
         <div className='bannerHousingSheet-tagList'>
           {logement.tags.map((tag, index) => (
-            <span key={index} className='bannerHousingSheet-tag'>{tag}</span>  // Affichage de chaque tag
+            <Tag key={index} text={tag} 
+            style={{zIndex: '2', position: 'absolute', top: '75%', right: '0.3%', fontSize: '100px', color: 'white'}} 
+            />  // Utilisation du composant Tag pour afficher chaque tag
           ))}
         </div>
 
@@ -86,24 +83,24 @@ function HousingSheet() {
         <div className='bannerHousingSheet-host'>
           <span className='bannerHousingSheet-hostName'>{logement.host.name}</span> {/* Nom de l'hôte */}
           <img className='bannerHousingSheet-hostImage' src={logement.host.picture} alt={logement.host.name} /> {/* Photo de l'hôte */}
+          {/* Affichage de la note sous forme d'étoiles */}
+          <Rating rating={logement.rating} empty='bannerHousingSheet-empty' filled='bannerHousingSheet-filled'/>
+          {/* Utilisation du composant Tag pour afficher les étoiles */}
         </div>
 
-        {/* Affichage de la note sous forme d'étoiles avec Tag */}
-        <Rating rating={logement.rating} empty='bannerHousingSheet-empty' filled='bannerHousingSheet-filled'/> {/* Utilisation du composant Tag pour afficher les étoiles */}
       </Banner>  
 
       <div className='housingSheet-wraper'>    
         {/* Boucle pour afficher chaque élément du tableau dans un Collapse */}
         {dataCollapse.map((item, index) => (
-          <Collapse className='housingSheet-collapse' 
+          <Collapse  
             key={index} 
             title={item.title} 
             content={item.content} 
-            collapseStyle={{ width: '45%' }}  
+            collapseStyle={{ width: '45%', marginBottom: '5%'}}  
           /> 
         ))}
       </div>
-
     </div>
   );
 }

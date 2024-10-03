@@ -30,4 +30,9 @@
             text-decoration: $link-decoration-hover; // Ajoute le soulignement au survol
         }
     }
+
+    &-linkActive {
+        text-decoration: underline;
+    }
+
 }

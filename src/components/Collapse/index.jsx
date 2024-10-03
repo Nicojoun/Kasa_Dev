@@ -16,9 +16,9 @@ function Collapse({ title, content, collapseStyle  }) {
       {/* Afficher le contenu uniquement si open est true */}
       {open && (
         <div className="collapse-content">
-          <p className="collapse-text">
+          <div className="collapse-text">
             {content}
-          </p>
+          </div>
         </div>
       )}
     </div>
