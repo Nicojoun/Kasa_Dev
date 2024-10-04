@@ -49,37 +49,15 @@ function HousingSheet() {
     <div className='housingSheet'>
       {/* Utilisation du composant Banner avec l'image du logement */}
       <Banner bannerClass="bannerHousingSheet" bannerText="">
+        
         {/* Intégration du Slideshow pour naviguer entre les images du logement */}
-        <Slideshow>
-          {totalSlides > 1 && (
-            <>
-              {/* Chevron gauche */}
-              <FontAwesomeIcon 
-                icon={faChevronLeft} 
-                className="slideshow-buttonPrev" 
-                onClick={() => setCurrentSlide((currentSlide - 1 + totalSlides) % totalSlides)}
-                style={{zIndex: '2', position: 'absolute', top: '75%', left: '2%' , fontSize: '100px', color: 'white'}} 
-              />
-              {/* Affichage de la numérotation en tant que children */}
-              <p className="slideshow-counter"
-                style={{ position: 'absolute', right: '50%', top: '160%', color: 'white', zIndex: '2' }}
-              >
-                {currentSlide + 1}/{totalSlides}
-              </p>
-              {/* Chevron droit */}
-              <FontAwesomeIcon 
-                icon={faChevronRight} 
-                className="slideshow-buttonNext" 
-                onClick={() => setCurrentSlide((currentSlide + 1) % totalSlides)}
-                style={{zIndex: '2', position: 'absolute', top: '75%', right: '2%', fontSize: '100px', color: 'white'}}  
-              />
-            </>
-          )}
-          {logement.pictures.map((picture, index) => (
-            <img key={index} className='bannerHousingSheet-image' src={picture} alt={`Slide ${index + 1}`} style={{zIndex: '1'}} />
+        <Slideshow >
+        {logement.pictures.map((picture, index) => (
+            <img key={index} className='bannerHousingSheet-image' src={picture} alt={`Slide ${index + 1}`} />
           ))}
         </Slideshow> 
 
+        
         <h1 className='bannerHousingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
         <h2 className='bannerHousingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
 

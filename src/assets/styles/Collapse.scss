@@ -13,6 +13,7 @@
         padding-left: 10px;
         border-radius: $card-border-radius;
         padding-right: 20px;
+        cursor: pointer; // Ajoute un pointeur pour indiquer que c'est cliquable
     }
 
     &-content {
@@ -40,7 +41,6 @@
 
     // styles pour le chevron
     &-chevron {
-        cursor: pointer; // Ajoute un pointeur pour indiquer que c'est cliquable
         transition: transform 0.3s ease; // Transition fluide de la rotation
     }
 
