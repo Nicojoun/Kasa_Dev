@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../assets/styles/Slideshow.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Importer FontAwesome
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Importer les icônes
 
 function Slideshow({ children }) {
   const [currentSlide, setCurrentSlide] = useState(0); // Gestion de l'index de l'item actuelle
@@ -21,9 +21,11 @@ function Slideshow({ children }) {
 
   return (
     <div className="slideshow">
-      <FontAwesomeIcon icon={faChevronLeft} onClick={prevSlide} className="slideshow-chevron" />     
-        {React.Children.toArray(children)[currentSlide]}
-      <FontAwesomeIcon icon={faChevronRight} onClick={nextSlide} className="slideshow-chevron" />
+      <div className="slideshow-chevrons">
+        <FontAwesomeIcon icon={faChevronLeft} onClick={prevSlide} className="slideshow-chevronPrev" />
+        <FontAwesomeIcon icon={faChevronRight} onClick={nextSlide} className="slideshow-chevronNext" />
+      </div>
+      {React.Children.toArray(children)[currentSlide]}
     </div>
   );
 }

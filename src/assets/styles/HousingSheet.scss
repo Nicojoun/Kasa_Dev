@@ -16,6 +16,7 @@
         width: $banner-width;
         object-fit: cover; 
         border-radius: $cover-border-radius;
+        z-index: 1;
     }
 
     &-title {

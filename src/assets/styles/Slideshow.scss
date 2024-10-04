@@ -1,17 +1,24 @@
 @import 'variables'; // Importation des variables
 
 .slideshow {
-    display: flex;
-    justify-content: space-between;
 
-    // &-buttonPrev {
-    //     position: $slideShow-button-position; 
-    //     top: $slideShow-button-top;
-    // }
+    &-chevrons {
+        display: flex;
+        justify-content: space-between;
+        position: $slideShow-button-position;
+        top: 250px;
+        font-size: 100px;
+        color: $secondary-color;
+    }
 
-    // &-buttonNext {
-    //     position: $slideShow-button-position; 
-    //     top: $slideShow-button-top;
-    // }
+    &-chevronPrev {
+        position: $slideShow-button-position;
+        left: $slideShow-button-distance-sides;
+    }
+
+    &-chevronNext {
+        position: $slideShow-button-position;
+        right: $slideShow-button-distance-sides;
+    }
 
 }
