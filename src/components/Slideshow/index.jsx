@@ -25,6 +25,11 @@ function Slideshow({ children }) {
         <FontAwesomeIcon icon={faChevronLeft} onClick={prevSlide} className="slideshow-chevronPrev" />
         <FontAwesomeIcon icon={faChevronRight} onClick={nextSlide} className="slideshow-chevronNext" />
       </div>
+      {/* Affichage du numéro de slide */}
+      <div className="slideshow-number">
+        {currentSlide + 1}/{totalSlides}
+      </div>
+      {/* Affichage du slide actuel */}
       {React.Children.toArray(children)[currentSlide]}
     </div>
   );

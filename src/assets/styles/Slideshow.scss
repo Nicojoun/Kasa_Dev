@@ -21,4 +21,11 @@
         right: $slideShow-button-distance-sides;
     }
 
+    &-number {   
+        position: absolute;
+        top: 210%;
+        left: 50%;
+        color: $secondary-color;
+    }
+
 }
