@@ -41,19 +41,6 @@
         bottom: 60%;
     }
 
-    &-hostName {
-        font: $font-notFound-backHome;
-        color: $tertiary-color;
-    }
-
-    &-hostImage {
-        width: 50px;  // Largeur de l'image
-        height: 50px; // Hauteur de l'image
-        border-radius: 50%; // Pour rendre l'image ronde
-        object-fit: cover; // Pour éviter la déformation de l'image
-        margin-top: 5px; // Espacement au-dessus de la photo
-    }
-
     &-empty {
         color: lightgray; // Couleur par défaut des étoiles
         margin-right: 2px; // Espace entre les étoiles

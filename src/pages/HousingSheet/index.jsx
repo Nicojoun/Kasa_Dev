@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'; // Import de useNavigate pour la redirection
 import logements from '../../datas/logements.json'; // Import des données
 import '../../assets/styles/HousingSheet.scss';
@@ -7,13 +7,11 @@ import Slideshow from '../../components/Slideshow'; // Import du composant Slide
 import Banner from '../../components/Banner'; // Import du composant Banner
 import Rating from '../../components/Rating'; // Import du composant Rating
 import Tag from '../../components/Tag'; // Import du composant Tag
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import Host from '../../components/Host';
 
 function HousingSheet() {
   const { id } = useParams(); // Récupération de l'ID depuis les paramètres de l'URL
   const logement = logements.find(log => log.id === id); // Recherche du logement correspondant
-  const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate(); // Pour la redirection
 
   useEffect(() => {
@@ -43,8 +41,6 @@ function HousingSheet() {
     },
   ];
 
-  const totalSlides = logement.pictures.length;
-
   return (
     <div className='housingSheet'>
       {/* Utilisation du composant Banner avec l'image du logement */}
@@ -56,7 +52,6 @@ function HousingSheet() {
             <img key={index} className='bannerHousingSheet-image' src={picture} alt={`Slide ${index + 1}`} />
           ))}
         </Slideshow> 
-
         
         <h1 className='bannerHousingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
         <h2 className='bannerHousingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
@@ -64,19 +59,15 @@ function HousingSheet() {
         {/* Affichage des tags avec le composant Tag */}
         <div className='bannerHousingSheet-tagList'>
           {logement.tags.map((tag, index) => (
-            <Tag key={index} text={tag} 
-            style={{zIndex: '2', position: 'absolute', top: '75%', right: '0.3%', fontSize: '100px', color: 'white'}} 
-            />  // Utilisation du composant Tag pour afficher chaque tag
+            <Tag key={index} text={tag} />  // Utilisation du composant Tag pour afficher chaque tag
           ))}
         </div>
 
         {/* Affichage du nom et de la photo de l'hôte */}
         <div className='bannerHousingSheet-host'>
-          <span className='bannerHousingSheet-hostName'>{logement.host.name}</span> {/* Nom de l'hôte */}
-          <img className='bannerHousingSheet-hostImage' src={logement.host.picture} alt={logement.host.name} /> {/* Photo de l'hôte */}
+          <Host name={logement.host.name} picture={logement.host.picture} /> 
           {/* Affichage de la note sous forme d'étoiles */}
           <Rating rating={logement.rating} empty='bannerHousingSheet-empty' filled='bannerHousingSheet-filled'/>
-          {/* Utilisation du composant Tag pour afficher les étoiles */}
         </div>
 
       </Banner>  
@@ -84,12 +75,7 @@ function HousingSheet() {
       <div className='housingSheet-wraper'>    
         {/* Boucle pour afficher chaque élément du tableau dans un Collapse */}
         {dataCollapse.map((item, index) => (
-          <Collapse  
-            key={index} 
-            title={item.title} 
-            content={item.content} 
-            collapseStyle={{ width: '45%', marginBottom: '5%'}}  
-          /> 
+          <Collapse key={index} title={item.title} content={item.content} collapseStyle={{ width: '45%', marginBottom: '5%'}} /> 
         ))}
       </div>
     </div>

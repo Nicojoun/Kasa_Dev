@@ -12,7 +12,7 @@ function Rating({ rating, empty, filled }) {
   }
 
   return (
-    <div className='rating'>
+    <div>
       {stars}
     </div>
   );

@@ -1,0 +1,25 @@
+@import 'variables'; // Importation des variables
+
+.host {
+    // background-color: $tertiary-color;
+    padding: $padding-tag;
+    border-radius: $card-border-radius;
+    font: $font-tag;
+    color: $secondary-color;
+    position: relative;
+    right: 50px;
+
+    &-name {
+        font: $font-notFound-backHome;
+        color: $tertiary-color;
+    }
+
+    &-image {
+        width: 50px;  // Largeur de l'image
+        height: 50px; // Hauteur de l'image
+        border-radius: 50%; // Pour rendre l'image ronde
+        object-fit: cover; // Pour éviter la déformation de l'image
+        margin-top: 5px; // Espacement au-dessus de la photo
+    }
+
+}
