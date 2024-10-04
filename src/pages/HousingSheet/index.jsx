@@ -67,7 +67,9 @@ function HousingSheet() {
         <div className='bannerHousingSheet-host'>
           <Host name={logement.host.name} picture={logement.host.picture} /> 
           {/* Affichage de la note sous forme d'étoiles */}
-          <Rating rating={logement.rating} empty='bannerHousingSheet-empty' filled='bannerHousingSheet-filled'/>
+          <div className='bannerHousingSheet-rating'>
+          <Rating rating={logement.rating} empty='bannerHousingSheet-empty' filled='bannerHousingSheet-filled' />
+          </div>
         </div>
 
       </Banner>  

@@ -41,6 +41,12 @@
         bottom: 60%;
     }
 
+    &-rating {
+        position: relative;
+        right: 6%;
+        top: 30px;
+    }
+
     &-empty {
         color: lightgray; // Couleur par défaut des étoiles
         margin-right: 2px; // Espace entre les étoiles
@@ -50,7 +56,6 @@
     &-filled {
         color: $tertiary-color; // Couleur des étoiles remplies
     }
-
 
 
 }

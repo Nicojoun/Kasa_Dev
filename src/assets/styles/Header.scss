@@ -1,10 +1,16 @@
 @import 'variables'; // Importation des variables
+@import 'variablesMedia'; // Importation des variables media queries
 
 .header {
     display: flex;
     justify-content: space-between;
-    margin: $margin-logo-red;  // Les margins combinés en une seule ligne (top, right/left, bottom)
+    margin: $margin-logo-red;  
     height: $logo-height;
+
+    @media (max-width: 768px) {
+        margin: $media-margin-logo-red;
+    }
+
 
     &-header-logoLink {
         height: $logo-height;
@@ -12,13 +18,25 @@
 
     &-logo {
         height: $logo-height;
+
+        @media (max-width: 768px) {
+            height: $media-logo-height;
+        }
     }
 
     &-nav {
         display: flex;
         gap: $gap;
         font: $font-nav; 
-        line-height: 34.22px; 
+        line-height: $font-nav-line-height; 
+
+        @media (max-width: 768px) {
+            font: $media-font-nav; 
+            line-height: $media-font-nav-line-height; 
+            position: relative;
+            top: 20%;
+            gap: $media-gap;
+        }
     }
 
     &-link {

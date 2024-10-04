@@ -22,9 +22,9 @@ function Header() {
 
         {/* Si on est sur la page "À propos", afficher du texte souligné, sinon un lien */}
         {location.pathname === '/about' ? (
-          <span className='header-linkActive'>À propos</span>  // Texte souligné
+          <span className='header-linkActive'>A Propos</span>  // Texte souligné
         ) : (
-          <Link to="/about" className='header-link'>À propos</Link>  // Lien normal
+          <Link to="/about" className='header-link'>A Propos</Link>  // Lien normal
         )}
 
       </nav>
