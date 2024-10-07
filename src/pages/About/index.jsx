@@ -13,7 +13,7 @@ const dataCollapse = [
 function About() {
   return (
     <div className='about'>
-      <Banner bannerClass="about-banner2" bannerText="" />  {/* Affichage du composant Banner */}
+      <Banner bannerClass="about-banner" />  {/* Affichage du composant Banner */}
         {/* Boucle pour afficher chaque élément du tableau dans un Collapse */}
         {dataCollapse.map((item, index) => (
           <Collapse className='about-collapse'

@@ -1,10 +1,9 @@
-import React, { Children } from 'react';
 import '../../assets/styles/Banner.scss';  
 
-function Banner({ bannerClass, bannerText, children }) {
+function Banner({ bannerClass, bannerText ,bannerTextClass, children }) {
   return (
     <div className={bannerClass}>
-      <h1 className='banner-text'>
+      <h1 className={bannerTextClass}>
         {bannerText}
       </h1>
       {children}

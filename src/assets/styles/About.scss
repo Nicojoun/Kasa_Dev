@@ -2,7 +2,7 @@
 
 .about {
 
-    &-banner2 {
+    &-banner {
         position: relative;  // Pour positionner le texte au-dessus de l'image
         background-image: $about-banner-background-image; // Applique l'image en arrière-plan
         background-size: cover; // Pour couvrir toute la div

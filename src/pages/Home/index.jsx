@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'; // Importer Link pour la navigation
 function Home() {
   return (
     <div>
-      <Banner bannerClass="bannerHome" bannerText="Chez vous, partout et ailleurs" />  {/* Affichage du composant Banner */}
+      <Banner bannerClass="bannerHome" bannerText="Chez vous, partout et ailleurs" bannerTextClass="bannerHomeText" />  {/* Affichage du composant Banner */}
       <div className='home'> 
         {logements.map(logement => (
           <Link className='home-linkHousing' key={logement.id} to={`/housing/${logement.id}`}>  {/* Navigation avec l'ID */}

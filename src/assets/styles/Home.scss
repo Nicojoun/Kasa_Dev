@@ -1,4 +1,5 @@
 @import 'variables'; // Importation des variables
+@import 'variablesMedia';
 
 .bannerHome {
     position: relative;  // Pour positionner le texte au-dessus de l'image
@@ -9,6 +10,22 @@
     width: $banner-width; // Largeur de 90% de la taille de l'écran
     margin: $banner-margin; // Centrer la bannière horizontalement
     border-radius: 25px;
+  }
+
+  .bannerHomeText {
+    color: $secondary-color;
+    font: $font-banner;
+    z-index: 1;           // S'assure que le texte soit au-dessus de l'image
+    text-align: center;   
+    padding-top: 80px;
+
+    @media (max-width: 768px) {
+        text-align: left;
+        font:$madia-font-banner;
+        padding-left: 20px;
+        width: 190px;
+    }
+
   }
 
 .home {
