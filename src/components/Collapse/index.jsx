@@ -1,13 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import '../../assets/styles/Collapse.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'; // Utiliser un seul icône
 
-function Collapse({ title, content, collapseStyle }) {
+function Collapse({ title, content }) {
   const [open, setOpen] = useState(false); // État pour gérer l'ouverture/fermeture
 
   return (
-    <div style={collapseStyle} className="collapse" >
+    <div className="collapse" >
       <div className="collapse-title" onClick={() => setOpen(o => !o)} >
         <div>{title}</div>
         {/* Ajouter une classe pour gérer la rotation du chevron */}

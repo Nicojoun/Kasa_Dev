@@ -16,34 +16,16 @@
 }
 
 .collapse {
-    
-  &-object {
-      padding: 20px;
-      color: $secondary-color;
-      font: $font-nav;
-   }
+    padding: 20px 10%;
 
-  &-item {
-      background-color: $tertiary-color;
-      height: 54px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-left: 10px;
-      border-radius: $card-border-radius;
-      padding-right: 20px;
-  }
+    @media (max-width: 768px) {
+        padding: 20px 3%;
+    }  
 
   &-content {
-      background-color: $superCard-color;
       padding-top: 5px;
       padding-left: 10px;
       padding-bottom: 5px;
-  }
-
-  &-text {
-      color: $primary-color;
-      font-size: 20px;
   }
 
 }   

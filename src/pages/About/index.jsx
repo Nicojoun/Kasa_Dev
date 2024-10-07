@@ -16,11 +16,10 @@ function About() {
       <Banner bannerClass="about-banner" />  {/* Affichage du composant Banner */}
         {/* Boucle pour afficher chaque élément du tableau dans un Collapse */}
         {dataCollapse.map((item, index) => (
-          <Collapse className='about-collapse'
+          <Collapse className='collapse'
             key={index} 
             title={item.title} 
             content={item.content} 
-            collapseStyle={{ padding: '20px 200px' }} 
           /> 
         ))}
       </div>
