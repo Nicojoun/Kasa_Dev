@@ -52,27 +52,31 @@ function HousingSheet() {
             <img key={index} className='bannerHousingSheet-image' src={picture} alt={`Slide ${index + 1}`} />
           ))}
         </Slideshow> 
-        
-        <h1 className='bannerHousingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
-        <h2 className='bannerHousingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
+
+      </Banner>
+
+      <div className='housingSheet-center'>
+
+        <h1 className='housingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
+        <h2 className='housingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
 
         {/* Affichage des tags avec le composant Tag */}
-        <div className='bannerHousingSheet-tagList'>
+        <div className='housingSheet-tagList'>
           {logement.tags.map((tag, index) => (
-            <Tag key={index} text={tag} />  // Utilisation du composant Tag pour afficher chaque tag
+          <Tag key={index} text={tag} />  // Utilisation du composant Tag pour afficher chaque tag
           ))}
         </div>
 
         {/* Affichage du nom et de la photo de l'hôte */}
-        <div className='bannerHousingSheet-host'>
+        <div className='housingSheet-host'>
           <Host name={logement.host.name} picture={logement.host.picture} /> 
           {/* Affichage de la note sous forme d'étoiles */}
-          <div className='bannerHousingSheet-rating'>
-          <Rating rating={logement.rating} empty='bannerHousingSheet-empty' filled='bannerHousingSheet-filled' />
+          <div className='housingSheet-rating'>
+            <Rating rating={logement.rating} empty='housingSheet-empty' filled='housingSheet-filled' />
           </div>
         </div>
 
-      </Banner>  
+      </div>  
 
       <div className='housingSheet-wraper'>    
         {/* Boucle pour afficher chaque élément du tableau dans un Collapse */}
