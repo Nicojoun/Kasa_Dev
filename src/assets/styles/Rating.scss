@@ -4,3 +4,13 @@
     display: flex;
     gap: 15px;
 }
+
+.empty {
+    color: lightgray; // Couleur par défaut des étoiles
+    margin-right: 2px; // Espace entre les étoiles
+    font-size: 30px; // Taille de la police pour les étoiles
+  }
+
+.filled {
+    color: $tertiary-color; // Couleur des étoiles remplies
+}
