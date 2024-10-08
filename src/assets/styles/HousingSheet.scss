@@ -29,6 +29,8 @@
         margin-left: auto;
         margin-right: auto;
         border-radius: 25px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
     &-title {
@@ -47,16 +49,21 @@
         gap: 10px;
     }
 
+    &-right {
+        display: flex;
+        justify-content: end;
+    }
+
     &-host {
-        position: relative;
-        left: 88%;
-        bottom: 60%;
+        // position: relative;
+        // left: 88%;
+        // bottom: 60%;
     }
 
     &-rating {
-        position: relative;
-        right: 6%;
-        top: 30px;
+        // position: relative;
+        // right: 6%;
+        // top: 30px;
     }
 
     &-empty {
@@ -70,10 +77,9 @@
     }
 
     &-wraper {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: $gap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100vw;
     }
 
 }

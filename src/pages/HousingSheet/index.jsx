@@ -44,44 +44,45 @@ function HousingSheet() {
   return (
     <div className='housingSheet'>
       {/* Utilisation du composant Banner avec l'image du logement */}
-      <Banner bannerClass="bannerHousingSheet" bannerText="">
-        
+      <Banner bannerClass="bannerHousingSheet" bannerText="">    
         {/* Intégration du Slideshow pour naviguer entre les images du logement */}
         <Slideshow >
         {logement.pictures.map((picture, index) => (
             <img key={index} className='bannerHousingSheet-image' src={picture} alt={`Slide ${index + 1}`} />
           ))}
         </Slideshow> 
-
       </Banner>
 
-      <div className='housingSheet-center'>
+        <div className='housingSheet-center'>
 
-        <h1 className='housingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
-        <h2 className='housingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
-
-        {/* Affichage des tags avec le composant Tag */}
-        <div className='housingSheet-tagList'>
-          {logement.tags.map((tag, index) => (
-          <Tag key={index} text={tag} />  // Utilisation du composant Tag pour afficher chaque tag
-          ))}
-        </div>
-
-        {/* Affichage du nom et de la photo de l'hôte */}
-        <div className='housingSheet-host'>
-          <Host name={logement.host.name} picture={logement.host.picture} /> 
-          {/* Affichage de la note sous forme d'étoiles */}
-          <div className='housingSheet-rating'>
-            <Rating rating={logement.rating} empty='housingSheet-empty' filled='housingSheet-filled' />
+          <div className='housingSheet-left'>
+            <h1 className='housingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
+            <h2 className='housingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
+            {/* Affichage des tags avec le composant Tag */}
+            <div className='housingSheet-tagList'>
+              {logement.tags.map((tag, index) => (
+              <Tag key={index} text={tag} />  // Utilisation du composant Tag pour afficher chaque tag
+              ))}
+            </div>
           </div>
-        </div>
 
-      </div>  
+          <div className='housingSheet-right'>
+            {/* Affichage du nom et de la photo de l'hôte */}
+            <div className='housingSheet-host'>
+              <Host name={logement.host.name} picture={logement.host.picture} /> 
+              {/* Affichage de la note sous forme d'étoiles */}
+              <div className='housingSheet-rating'>
+                <Rating rating={logement.rating} empty='housingSheet-empty' filled='housingSheet-filled' />
+              </div>
+            </div>
+          </div>
+
+        </div>  
 
       <div className='housingSheet-wraper'>    
         {/* Boucle pour afficher chaque élément du tableau dans un Collapse */}
         {dataCollapse.map((item, index) => (
-          <Collapse key={index} title={item.title} content={item.content} collapseStyle={{ width: '45%', marginBottom: '5%'}} /> 
+          <Collapse key={index} title={item.title} content={item.content} /> 
         ))}
       </div>
     </div>
