@@ -1,11 +1,11 @@
 import React from 'react';
 import '../../assets/styles/Card.scss';
 
-function Card({ image, cardTitle, AltImage }) { // Accepter les children comme props
+function Card({ cardSrc, cardTitle, cardAlt, cardClass }) {
   return (
-    <div className='card'>
-        <img src={image} alt={AltImage} className='home-cardImage' /> {/* Affichage de l'image de la location */}
-        <h2 className='home-cardTitle'>{cardTitle}</h2> 
+    <div className={`card ${cardClass}`}>
+        <img src={cardSrc} alt={cardAlt} className='card-image' /> {/* Affichage de l'image de la location */}
+        <h2 className='card-title'>{cardTitle}</h2> 
     </div>
   );
 }

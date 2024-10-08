@@ -12,11 +12,10 @@ function Home() {
       <div className='home'> 
         {logements.map(logement => (
           <Link className='home-linkHousing' key={logement.id} to={`/housing/${logement.id}`}>  {/* Navigation avec l'ID */}
-            <Card 
-              image={logement.cover} 
+            <Card cardSrc={logement.cover} 
               cardTitle={logement.title}
-              AltImage={logement.title} 
-              className='home-card' 
+              cardAlt={logement.title} 
+              cardClass='home-card' 
             /> 
           </Link>
         ))}
