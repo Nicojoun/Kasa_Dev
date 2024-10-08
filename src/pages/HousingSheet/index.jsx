@@ -46,11 +46,7 @@ function HousingSheet() {
       {/* Utilisation du composant Banner avec l'image du logement */}
       <Banner bannerClass="bannerHousingSheet" bannerText="">    
         {/* Intégration du Slideshow pour naviguer entre les images du logement */}
-        <Slideshow >
-        {logement.pictures.map((picture, index) => (
-            <img key={index} className='bannerHousingSheet-image' src={picture} alt={`Slide ${index + 1}`} />
-          ))}
-        </Slideshow> 
+        <Slideshow images={logement.pictures} imagesClass='bannerHousingSheet-image' /> 
       </Banner>
 
         <div className='housingSheet-center'>

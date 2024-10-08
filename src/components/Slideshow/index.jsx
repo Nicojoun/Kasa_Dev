@@ -3,9 +3,9 @@ import '../../assets/styles/Slideshow.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Importer FontAwesome
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Importer les icônes
 
-function Slideshow({ children }) {
+function Slideshow({images, imagesClass}) {
   const [currentSlide, setCurrentSlide] = useState(0); // Gestion de l'index de l'item actuelle
-  const totalSlides = React.Children.count(children); // Nombre total de slides (enfants)
+  const totalSlides = React.Children.count(images); // Nombre total de slides (enfants)
 
   const prevSlide = () => {
     // Passer à l'item précédent, en bouclant à la fin si on est au premier item
@@ -29,8 +29,8 @@ function Slideshow({ children }) {
       <div className="slideshow-number">
         {currentSlide + 1}/{totalSlides}
       </div>
-      {/* Affichage du slide actuel */}
-      {React.Children.toArray(children)[currentSlide]}
+      {/* Affichage de l'image courante */}
+      <img src={images[currentSlide]} alt={`Slide ${currentSlide + 1}`} className={imagesClass} />
     </div>
   );
 }
