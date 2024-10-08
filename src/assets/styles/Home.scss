@@ -10,6 +10,11 @@
     width: $banner-width; // Largeur de 90% de la taille de l'écran
     margin: $banner-margin; // Centrer la bannière horizontalement
     border-radius: 25px;
+
+    @media (max-width: 768px) {
+        height: 111px;
+    }
+
   }
 
   .bannerHomeText {
@@ -24,6 +29,7 @@
         font:$media-font-banner;
         padding-left: 20px;
         width: 190px;
+        padding-top: 30px;
     }
 
   }
@@ -42,6 +48,16 @@
     margin-top: $superCard-margin;
     margin-bottom: $superCard-margin;
 
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        padding-top: $media-superCard-padding;
+        padding-bottom: $media-superCard-padding;
+        margin-top: $media-superCard-margin;
+        margin-bottom: $media-superCard-margin;
+        gap: 15px;
+    }
+
     &-linkHousing {
         text-decoration: none;
     }
@@ -49,6 +65,11 @@
     &-card {
         width: 25vw;
         height: $card-width;
+
+        @media (max-width: 768px) {
+            width: 86vw;
+        }
+
     }
 
 
