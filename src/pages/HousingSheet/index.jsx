@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'; // Import de useNavigate pour la redirection
+import React from 'react';
+import { useParams } from 'react-router-dom'; // Import de useNavigate pour la redirection
 import logements from '../../datas/logements.json'; // Import des données
 import '../../assets/styles/HousingSheet.scss';
 import Collapse from '../../components/Collapse';
@@ -8,22 +8,15 @@ import Banner from '../../components/Banner'; // Import du composant Banner
 import Rating from '../../components/Rating'; // Import du composant Rating
 import Tag from '../../components/Tag'; // Import du composant Tag
 import Host from '../../components/Host';
+import NotFound from '../NotFound';
 
 function HousingSheet() {
   const { id } = useParams(); // Récupération de l'ID depuis les paramètres de l'URL
   const logement = logements.find(log => log.id === id); // Recherche du logement correspondant
-  const navigate = useNavigate(); // Pour la redirection
 
-  useEffect(() => {
-    // Si le logement n'est pas trouvé, redirection vers la page NotFound
-    if (!logement) {
-      navigate('/notfound'); // Redirection vers la page NotFound
-    }
-  }, [logement, navigate]);
-
-  // Si le logement n'est pas trouvé, ne rien afficher (car on sera redirigé)
+  // Si le logement n'est pas trouvé, redirection vers la page NotFound
   if (!logement) {
-    return null;
+    return <NotFound /> ; 
   }
 
   // Données pour le Collapse
