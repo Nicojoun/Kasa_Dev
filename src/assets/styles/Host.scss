@@ -1,24 +1,22 @@
-@import 'variables'; // Importation des variables
+@import 'variables'; 
 
 .host {
     padding: $padding-tag;
     border-radius: $card-border-radius;
     font: $font-tag;
     color: $secondary-color;
-    // position: relative;
-    // right: 50px;
 
     &-name {
-        font: $font-notFound-backHome;
+        font: 500 18px 'Montserrat';
         color: $tertiary-color;
     }
 
     &-image {
-        width: 50px;  // Largeur de l'image
-        height: 50px; // Hauteur de l'image
-        border-radius: 50%; // Pour rendre l'image ronde
-        object-fit: cover; // Pour éviter la déformation de l'image
-        margin-top: 5px; // Espacement au-dessus de la photo
+        width: 64px;  
+        height: 64px; 
+        border-radius: 50%; 
+        object-fit: cover; 
+        margin-top: 5px; 
     }
 
 }

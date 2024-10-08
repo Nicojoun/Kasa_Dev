@@ -60,10 +60,10 @@ function HousingSheet() {
             <div className='housingSheet-host'>
               <Host name={logement.host.name} picture={logement.host.picture} /> 
               {/* Affichage de la note sous forme d'étoiles */}
+            </div>  
               <div className='housingSheet-rating'>
                 <Rating rating={logement.rating} />
               </div>
-            </div>
           </div>
 
         </div>  
