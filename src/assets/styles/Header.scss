@@ -6,6 +6,7 @@
     justify-content: space-between;
     margin: $margin-logo-red;  
     height: $logo-height;
+    z-index: 2;
 
     @media (max-width: 768px) {
         margin: $media-margin-logo-red;

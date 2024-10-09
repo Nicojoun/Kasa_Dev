@@ -5,10 +5,16 @@
     &-chevrons {
         display: flex;
         justify-content: space-between;
-        position: $slideShow-button-position;
+        position: relative;
         top: 250px;
         font-size: 100px;
         color: $secondary-color;
+
+        @media (max-width: 768px) {
+            font-size: 20px;
+            top: 130px;
+        }  
+
     }
 
     &-chevronPrev {

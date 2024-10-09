@@ -3,11 +3,21 @@
 .rating {
     display: flex;
     gap: 15px;
+
+    @media (max-width: 768px) {
+        gap: 7.5px;
+    }  
+
 }
 
 .empty {
     color: lightgray; // Couleur par défaut des étoiles
     font-size: 30px; // Taille de la police pour les étoiles
+
+    @media (max-width: 768px) {
+        font-size: 13.41px ;
+    }  
+
   }
 
 .filled {

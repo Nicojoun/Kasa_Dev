@@ -1,4 +1,4 @@
-@import 'variables'; // Importation des variables
+@import 'variables'; 
 
 .tag {
     background-color: $tertiary-color;
@@ -6,4 +6,5 @@
     border-radius: $card-border-radius;
     font: $font-tag;
     color: $secondary-color;
+    text-align: center;
 }

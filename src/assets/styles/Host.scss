@@ -5,10 +5,15 @@
     border-radius: $card-border-radius;
     font: $font-tag;
     color: $secondary-color;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     &-name {
         font: 500 18px 'Montserrat';
         color: $tertiary-color;
+        position: relative;
+        top: 10px;
+        left: 20px;
     }
 
     &-image {
