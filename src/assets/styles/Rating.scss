@@ -1,4 +1,4 @@
-@import 'variables'; // Importation des variables
+@import 'variables'; 
 
 .rating {
     display: flex;
@@ -10,9 +10,10 @@
 
 }
 
+// étoiles par défaut
 .empty {
-    color: lightgray; // Couleur par défaut des étoiles
-    font-size: 30px; // Taille de la police pour les étoiles
+    color: lightgray;   
+    font-size: 30px; 
 
     @media (max-width: 768px) {
         font-size: 13.41px ;
@@ -20,6 +21,7 @@
 
   }
 
+  // étoiles remplies
 .filled {
-    color: $tertiary-color; // Couleur des étoiles remplies
+    color: $tertiary-color; 
 }

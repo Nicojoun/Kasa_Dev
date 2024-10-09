@@ -1,14 +1,14 @@
-@import 'variables'; // Importation des variables
+@import 'variables'; 
 @import 'variablesMedia';
 
 .bannerHome {
-    position: relative;  // Pour positionner le texte au-dessus de l'image
-    background-image: $home-banner-background-image; // Applique l'image en arrière-plan
-    background-size: cover; // Pour couvrir toute la div
-    background-position: center; // Centre l'image
-    height: $banner-height; // Hauteur de la bannière
-    width: $banner-width; // Largeur de 90% de la taille de l'écran
-    margin: $banner-margin; // Centrer la bannière horizontalement
+    position: relative;  
+    background-image: $home-banner-background-image; 
+    background-size: cover; 
+    background-position: center; 
+    height: $banner-height; 
+    width: $banner-width; 
+    margin: $banner-margin; 
     border-radius: 25px;
 
     @media (max-width: 768px) {
@@ -20,7 +20,7 @@
   .bannerHomeText {
     color: $secondary-color;
     font: $font-banner;
-    z-index: 1;           // S'assure que le texte soit au-dessus de l'image
+    z-index: 1;           
     text-align: center;   
     padding-top: 80px;
 
@@ -36,12 +36,12 @@
 
 .home {
     background-color:  $superCard-color;
-    width: $banner-width;     // Largeur de 90% de la taille de l'écran
-    margin: $banner-margin;   // Centrer la bannière horizontalement
+    width: $banner-width;     
+    margin: $banner-margin;   
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 75px 0;
-    justify-items: center; // Centre les éléments horizontalement
+    justify-items: center; 
     border-radius: $card-border-radius;
     padding-top: $superCard-padding;
     padding-bottom: $superCard-padding;

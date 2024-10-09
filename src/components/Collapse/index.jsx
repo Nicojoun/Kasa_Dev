@@ -7,8 +7,8 @@ function Collapse({ title, content }) {
   const [open, setOpen] = useState(false); // État pour gérer l'ouverture/fermeture
 
   return (
-    <div className="collapse" >
-      <div className="collapse-title" onClick={() => setOpen(o => !o)} >
+    <div className='collapse' >
+      <div className='collapse-title' onClick={() => setOpen(o => !o)} >
         <div>{title}</div>
         {/* Ajouter une classe pour gérer la rotation du chevron */}
         <FontAwesomeIcon
@@ -18,7 +18,7 @@ function Collapse({ title, content }) {
       </div>
       {/* Contenu déroulant */}
       <div className={`collapse-content ${open ? 'collapse-open' : ''}`}>
-        <div className="collapse-text">{content}</div>
+        <div className='collapse-text'>{content}</div>
       </div>
     </div>
   );

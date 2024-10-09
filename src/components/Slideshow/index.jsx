@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../assets/styles/Slideshow.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Importer FontAwesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Importer les icônes
 
 function Slideshow({images, imagesClass}) {
@@ -20,13 +20,13 @@ function Slideshow({images, imagesClass}) {
   };
 
   return (
-    <div className="slideshow">
-      <div className="slideshow-chevrons">
-        <FontAwesomeIcon icon={faChevronLeft} onClick={prevSlide} className="slideshow-chevronPrev" />
-        <FontAwesomeIcon icon={faChevronRight} onClick={nextSlide} className="slideshow-chevronNext" />
+    <div className='slideshow' >
+      <div className='slideshow-chevrons' >
+        <FontAwesomeIcon icon={faChevronLeft} onClick={prevSlide} className='slideshow-chevronPrev' />
+        <FontAwesomeIcon icon={faChevronRight} onClick={nextSlide} className='slideshow-chevronNext' />
       </div>
       {/* Affichage du numéro de slide */}
-      <div className="slideshow-number">
+      <div className='slideshow-number' >
         {currentSlide + 1}/{totalSlides}
       </div>
       {/* Affichage de l'image courante */}

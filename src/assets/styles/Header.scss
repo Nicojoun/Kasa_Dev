@@ -1,5 +1,5 @@
-@import 'variables'; // Importation des variables
-@import 'variablesMedia'; // Importation des variables media queries
+@import 'variables'; 
+@import 'variablesMedia'; 
 
 .header {
     display: flex;
@@ -45,9 +45,8 @@
         height: $logo-height;
         color: $primary-color;
 
-        // Styles pour le lien au survol
         &:hover {
-            text-decoration: $link-decoration-hover; // Ajoute le soulignement au survol
+            text-decoration: $link-decoration-hover; 
         }
     }
 

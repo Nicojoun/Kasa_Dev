@@ -1,12 +1,12 @@
 import React from 'react';
-import { useParams } from 'react-router-dom'; // Import de useNavigate pour la redirection
-import logements from '../../datas/logements.json'; // Import des données
+import { useParams } from 'react-router-dom'; 
+import logements from '../../datas/logements.json'; 
 import '../../assets/styles/HousingSheet.scss';
 import Collapse from '../../components/Collapse';
-import Slideshow from '../../components/Slideshow'; // Import du composant Slideshow
-import Banner from '../../components/Banner'; // Import du composant Banner
-import Rating from '../../components/Rating'; // Import du composant Rating
-import Tag from '../../components/Tag'; // Import du composant Tag
+import Slideshow from '../../components/Slideshow'; 
+import Banner from '../../components/Banner'; 
+import Rating from '../../components/Rating'; 
+import Tag from '../../components/Tag'; 
 import Host from '../../components/Host';
 import NotFound from '../NotFound';
 
@@ -19,9 +19,8 @@ function HousingSheet() {
     return <NotFound /> ; 
   }
 
-  // Données pour le Collapse
   const dataCollapse = [
-    { title: 'Description', content: (<p>{logement.description}</p> ) }, // Ajout de la description
+    { title: 'Description', content: (<p>{logement.description}</p> ) }, 
     { 
       title: 'Équipements', 
       content: (
@@ -30,27 +29,24 @@ function HousingSheet() {
             <li key={index} style={{listStyle: 'none', position: 'relative', right: '5%'}}>{equipment}</li>
           ))}
         </ul>
-      ) // Ajout des équipements en tant que liste
+      ) 
     },
   ];
 
   return (
     <div className='housingSheet'>
-      {/* Utilisation du composant Banner avec l'image du logement */}
-      <Banner bannerClass="bannerHousingSheet" bannerText="">    
-        {/* Intégration du Slideshow pour naviguer entre les images du logement */}
+      <Banner bannerClass='bannerHousingSheet'>    
         <Slideshow images={logement.pictures} imagesClass='bannerHousingSheet-image' /> 
       </Banner>
 
         <div className='housingSheet-center'>
 
           <div className='housingSheet-left'>
-            <h1 className='housingSheet-title'>{logement.title}</h1> {/* Affichage du titre du logement */}
-            <h2 className='housingSheet-location'>{logement.location}</h2> {/* Affichage du lieu du logement */}
-            {/* Affichage des tags avec le composant Tag */}
+            <h1 className='housingSheet-title'>{logement.title}</h1> 
+            <h2 className='housingSheet-location'>{logement.location}</h2> 
             <div className='housingSheet-tagList'>
               {logement.tags.map((tag, index) => (
-              <Tag key={index} text={tag} />  // Utilisation du composant Tag pour afficher chaque tag
+              <Tag key={index} text={tag} />  
               ))}
             </div>
           </div>

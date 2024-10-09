@@ -1,11 +1,11 @@
-@import 'variables'; // Importation des variables
+@import 'variables'; 
 @import 'variablesMedia'; 
 
 .notFound {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centrer verticalement */
-    align-items: center; /* Centrer horizontalement */
+    justify-content: center; 
+    align-items: center; 
     margin-top: -5%;
 
     &-404 {

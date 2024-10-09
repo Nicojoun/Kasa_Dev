@@ -1,15 +1,15 @@
-@import 'variables'; // Importation des variables
+@import 'variables'; 
 
 .about {
 
     &-banner {
-        position: relative;  // Pour positionner le texte au-dessus de l'image
-        background-image: $about-banner-background-image; // Applique l'image en arrière-plan
-        background-size: cover; // Pour couvrir toute la div
-        background-position: center; // Centre l'image
-        height: $banner-height; // Hauteur de la bannière
-        width: $banner-width; // Largeur de 90% de la taille de l'écran
-        margin: $banner-margin; // Centrer la bannière horizontalement
+        position: relative;  
+        background-image: $about-banner-background-image; 
+        background-size: cover; 
+        background-position: center;
+        height: $banner-height; 
+        width: $banner-width; 
+        margin: $banner-margin;
         border-radius: 25px;
       }
 
@@ -29,6 +29,5 @@
   }
 
 }   
-
 
 
