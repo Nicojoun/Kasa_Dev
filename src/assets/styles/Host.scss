@@ -1,19 +1,24 @@
 @import 'variables'; 
 
 .host {
-    padding: $padding-tag;
+    //padding: $padding-tag;
     border-radius: $card-border-radius;
     font: $font-tag;
     color: $secondary-color;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    
 
     &-name {
         font: 500 18px 'Montserrat';
         color: $tertiary-color;
-        position: relative;
-        top: 10px;
-        left: 20px;
+        // position: relative;
+        // top: 10px;
+        // left: 20px;
+        display: flex;
+        align-items: center;
+        // max-width: 50px;
 
         @media (max-width: 768px) {
             font: 500 12px 'Montserrat';
@@ -26,7 +31,7 @@
         height: 64px; 
         border-radius: 50%; 
         object-fit: cover; 
-        margin-top: 5px; 
+        // margin-top: 5px; 
 
         @media (max-width: 768px) {
             width: 32px;  

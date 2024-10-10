@@ -4,12 +4,16 @@
 .header {
     display: flex;
     justify-content: space-between;
-    margin: $margin-logo-red;  
+    padding-top: $margin-logo-vert; 
+    padding-right: $margin-logo-hori;
+    padding-left: $margin-logo-hori; 
     height: $logo-height;
     z-index: 2;
 
     @media (max-width: 768px) {
-        margin: $media-margin-logo-red;
+        padding-top: $media-margin-logo-vert; 
+        padding-right: $media-margin-logo-hori;
+        padding-left: $media-margin-logo-hori;
     }
 
 
