@@ -1,0 +1,33 @@
+@import 'variables';
+@import 'variablesMedia'; 
+
+.banner {
+    position: relative;  
+    background-size: cover; 
+    background-position: center;
+    height: $banner-height; 
+    width: $banner-width; 
+    border-radius: 25px;
+
+    @media (max-width: 768px) {
+        height: 111px;
+    }
+
+    &-title {
+        color: $secondary-color;
+        font: $font-banner;
+        z-index: 1;           
+        text-align: center;   
+        padding-top: 80px;
+    
+        @media (max-width: 768px) {
+            text-align: left;
+            font:$media-font-banner;
+            padding-left: 20px;
+            width: 190px;
+            padding-top: 30px;
+        }
+    
+      }
+
+  }

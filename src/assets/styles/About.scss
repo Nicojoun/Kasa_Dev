@@ -3,14 +3,8 @@
 .about {
 
     &-banner {
-        position: relative;  
-        background-image: $about-banner-background-image; 
-        background-size: cover; 
-        background-position: center;
-        height: $banner-height; 
-        width: $banner-width; 
+        background-image: $about-banner-background-image;
         margin: $banner-margin;
-        border-radius: 25px;
       }
 
 }

@@ -1,7 +1,9 @@
-function Banner({ bannerClass, bannerText, bannerTextClass, children }) {
+import '../../assets/styles/Banner.scss';
+
+function Banner({ bannerText, bannerClass , children  }) {
   return (
-    <div className={bannerClass}>
-      <h1 className={bannerTextClass}>
+    <div className={`banner ${bannerClass}`}>
+      <h1 className='banner-title'>
         {bannerText}
       </h1>
       {children}

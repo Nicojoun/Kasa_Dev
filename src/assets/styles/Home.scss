@@ -1,40 +1,15 @@
 @import 'variables'; 
 @import 'variablesMedia';
 
-.bannerHome {
-    position: relative;  
-    background-image: $home-banner-background-image; 
-    background-size: cover; 
-    background-position: center; 
-    height: $banner-height; 
-    width: $banner-width; 
-    margin: $banner-margin; 
-    border-radius: 25px;
-
-    @media (max-width: 768px) {
-        height: 111px;
-    }
-
-  }
-
-  .bannerHomeText {
-    color: $secondary-color;
-    font: $font-banner;
-    z-index: 1;           
-    text-align: center;   
-    padding-top: 80px;
-
-    @media (max-width: 768px) {
-        text-align: left;
-        font:$media-font-banner;
-        padding-left: 20px;
-        width: 190px;
-        padding-top: 30px;
-    }
-
-  }
 
 .home {
+
+    &-banner { 
+        background-image: $home-banner-background-image;
+        margin: $banner-margin; 
+      }
+
+    &-housing {
     background-color:  $superCard-color;
     width: $banner-width;     
     margin: $banner-margin;   
@@ -47,15 +22,17 @@
     padding-bottom: $superCard-padding;
     margin-top: $superCard-margin;
     margin-bottom: $superCard-margin;
-
-
-    @media (max-width: 768px) {
-        grid-template-columns: 1fr;
-        padding-top: $media-superCard-padding;
-        padding-bottom: $media-superCard-padding;
-        margin-top: $media-superCard-margin;
-        margin-bottom: $media-superCard-margin;
-        gap: 15px;
+    
+    
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            padding-top: $media-superCard-padding;
+            padding-bottom: $media-superCard-padding;
+            margin-top: $media-superCard-margin;
+            margin-bottom: $media-superCard-margin;
+            gap: 15px;
+        }
+    
     }
 
     &-linkHousing {
@@ -65,12 +42,20 @@
     &-card {
         width: 25vw;
         height: $card-width;
-
+    
         @media (max-width: 768px) {
             width: 86vw;
         }
-
+    
     }
 
-
 }
+
+
+
+
+
+
+
+
+
