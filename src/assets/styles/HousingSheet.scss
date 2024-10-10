@@ -1,38 +1,38 @@
 @import 'variables'; 
 
-.bannerHousingSheet{
-    position: relative;  
-    background-size: cover; 
-    background-position: center; 
-    height: $banner-height; 
-    width: $banner-width; 
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -100px;
-    margin-bottom: 300px;
-    border-radius: 25px;
+.housingSheet {
 
-    @media (max-width: 768px) {
-        margin-top: -40px;
-        margin-bottom: 50px; 
+    &-slide{
+        position: relative;  
+        background-size: cover; 
+        background-position: center; 
+        height: $banner-height; 
+        width: $banner-width; 
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -100px;
+        margin-bottom: 300px;
+        border-radius: 25px;
+    
+        @media (max-width: 768px) {
+            margin-top: -40px;
+            margin-bottom: 50px; 
+        }
+    
     }
-
+    
     &-image {
         height: 415px;
         width: $banner-width;
         object-fit: cover; 
         border-radius: $cover-border-radius;
         z-index: 1;
-
+    
         @media (max-width: 768px) {
             height: 255px; 
         }
-
+    
     }
-
-}
-
-.housingSheet {
 
     &-center { 
         height: $banner-height; 

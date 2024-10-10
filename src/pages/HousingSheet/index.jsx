@@ -35,9 +35,9 @@ function HousingSheet() {
 
   return (
     <div className='housingSheet'>
-      <Banner bannerClass='bannerHousingSheet'>    
-        <Slideshow images={logement.pictures} imagesClass='bannerHousingSheet-image' /> 
-      </Banner>
+      <div className='housingSheet-slide'>    
+        <Slideshow images={logement.pictures} imagesClass='housingSheet-image' /> 
+      </div>
 
         <div className='housingSheet-center'>
 
