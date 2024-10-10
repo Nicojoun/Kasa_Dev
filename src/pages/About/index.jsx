@@ -12,16 +12,16 @@ const dataCollapse = [
 function About() {
   return (
     <div className='about'>
-      <Banner bannerClass='about-banner' />  
-        {/* Boucle pour afficher chaque élément du tableau dans un Collapse */}
-        {dataCollapse.map((item, index) => (
-          <Collapse className='collapse'
-            key={index} 
-            title={item.title} 
-            content={item.content} 
-          /> 
-        ))}
-      </div>
+      <Banner bannerClass='about-banner' />
+      {/* Boucle pour afficher chaque élément du tableau dans un Collapse */}
+      {dataCollapse.map((item, index) => (
+        <Collapse className='collapse'
+          key={index} 
+          title={item.title} 
+          content={item.content} 
+        /> 
+      ))}
+    </div>
   );
 }
 
