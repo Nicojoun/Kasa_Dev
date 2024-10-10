@@ -3,14 +3,14 @@ $media-logo-height: 33px;
 $media-margin-logo-red: 15px 30px;
 $media-gap : 25px;
 
-$media-font-nav : 500 12px 'Montserrat';
+$media-font-nav : 500 12px $font-text;
 $media-font-nav-line-height : 17.11px;
 
-$media-font-banner: 700 24px/24px Montserrat;
+$media-font-banner: 700 24px/24px $font-text;
 
-$media-font-404 : 700 96px 'Montserrat';
-$media-font-notFound-message : 500 18px 'Montserrat';
-$media-font-notFound-backHome : 500 14px 'Montserrat';
+$media-font-404 : 700 96px $font-text;
+$media-font-notFound-message : 500 18px $font-text;
+$media-font-notFound-backHome : 500 14px $font-text;
 
 $media-superCard-padding: 15px;
 $media-superCard-margin: 15px;

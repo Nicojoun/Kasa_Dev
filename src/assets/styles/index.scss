@@ -1,6 +1,7 @@
 @import 'variables'; 
-
+ 
 .index {
+  font-family: $font-text, sans-serif;
   height: $height-index; // Étend le conteneur sur toute la hauteur
   display: flex;
   flex-direction: column;
