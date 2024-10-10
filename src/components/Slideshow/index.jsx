@@ -9,15 +9,15 @@ function Slideshow({images, imagesClass}) {
 
   const prevSlide = () => {
     // Passer à l'item précédent, en bouclant à la fin si on est au premier item
-    const prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+    const prevIndex = currentSlide - 1 < 0 ? totalSlides - 1 : currentSlide - 1;
     setCurrentSlide(prevIndex);
   };
-
+  
   const nextSlide = () => {
     // Passer à l'item suivant, en bouclant au début si on est au dernier item
-    const nextIndex = (currentSlide + 1) % totalSlides;
+    const nextIndex = currentSlide + 1 >= totalSlides ? 0 : currentSlide + 1;
     setCurrentSlide(nextIndex);
-  };
+  };  
 
   return (
     <div className='slideshow' >
