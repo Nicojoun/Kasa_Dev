@@ -1,9 +1,9 @@
 @import 'variables'; 
  
 .index {
-  font-family: $font-text, sans-serif;
   height: $height-index; // Étend le conteneur sur toute la hauteur
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: $font-text;
 }
