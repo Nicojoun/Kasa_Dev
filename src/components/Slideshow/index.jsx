@@ -29,7 +29,6 @@ function Slideshow({images, imagesClass}) {
       <div className='slideshow-number' >
         {currentSlide + 1}/{totalSlides}
       </div>
-      {/* Affichage de l'image courante */}
       <img src={images[currentSlide]} alt={`Slide ${currentSlide + 1}`} className={imagesClass} />
     </div>
   );
