@@ -5,7 +5,10 @@ function NotFound() {
   return (
     <div className='notFound' >
       <h1 className='notFound-404'>404</h1>
-      <p className='notFound-message'>Oups! La page que vous demandez n'existe pas.</p>
+      <div className='notFound-message'>
+        <span className='notFound-messageTop'>Oups! La page que</span>
+        <span className='notFound-messageBottom'>vous demandez n'existe pas.</span>  
+      </div>
       <Link to='/' className='notFound-linkBackHome'> 
         Retourner sur la page d’accueil
       </Link>

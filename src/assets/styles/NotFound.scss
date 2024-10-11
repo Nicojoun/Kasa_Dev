@@ -3,10 +3,13 @@
 
 .notFound {
     display: flex;
-    flex-direction: column;
-    justify-content: center; 
+    flex-direction: column; 
     align-items: center; 
     margin-top: -5%;
+
+    @media (max-width: 768px) {
+        gap: 70px;
+    }
 
     &-404 {
         color: $tertiary-color;
@@ -23,17 +26,39 @@
         color: $tertiary-color;
         margin-top: -10%;
         margin-bottom: 10%;
+        display: flex;
+        gap: 10px;
 
         @media (max-width: 768px) {
             font: $media-font-notFound-message;
             width: 174.96px;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
         }
 
     }
 
+    &-messageTop {
+        white-space: nowrap;
+
+        @media (max-width: 768px) {
+        }
+       
+    }
+
+    &-messageBottom {
+
+        @media (max-width: 768px) {
+            white-space: nowrap;
+        }
+       
+    }
+
     &-linkBackHome {
         font: $font-notFound-backHome;
-        margin-bottom: 10%; 
+        margin-bottom: 10%;
+        color: black; 
 
         @media (max-width: 768px) {
             font: $media-font-notFound-backHome;
