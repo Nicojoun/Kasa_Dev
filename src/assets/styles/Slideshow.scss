@@ -1,12 +1,22 @@
 @import 'variables'; 
 
 .slideshow {
+    height: 415px;
+    width: 100%;
+    object-fit: cover; 
+    border-radius: $cover-border-radius;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+        height: 255px; 
+    }
 
     &-chevrons {
         display: flex;
         justify-content: space-between;
-        position: relative;
-        top: 250px;
         font-size: 100px;
         color: $secondary-color;
 
@@ -28,10 +38,12 @@
     }
 
     &-number {   
-        position: absolute;
-        top: 210%;
-        left: 50%;
+        position: relative;
+        top: 30%;
         color: $secondary-color;
+        display: flex;
+        justify-content: center;
+        align-items: end;
     }
 
 }

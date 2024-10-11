@@ -1,24 +1,21 @@
 @import 'variables'; 
 
 .host {
-    //padding: $padding-tag;
     border-radius: $card-border-radius;
     font: $font-tag;
     color: $secondary-color;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     gap: 10px;
-    
 
     &-name {
         font: 500 18px 'Montserrat';
         color: $tertiary-color;
-        // position: relative;
-        // top: 10px;
-        // left: 20px;
         display: flex;
         align-items: center;
-        // max-width: 50px;
+        max-width: 30%;
+        text-align: right;
+        margin-right: 20px;
 
         @media (max-width: 768px) {
             font: 500 12px 'Montserrat';
@@ -31,7 +28,6 @@
         height: 64px; 
         border-radius: 50%; 
         object-fit: cover; 
-        // margin-top: 5px; 
 
         @media (max-width: 768px) {
             width: 32px;  

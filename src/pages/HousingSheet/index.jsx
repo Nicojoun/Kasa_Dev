@@ -35,7 +35,7 @@ function HousingSheet() {
   return (
     <div className='housingSheet'>
       <div className='housingSheet-slide'>    
-        <Slideshow images={logement.pictures} imagesClass='housingSheet-image' /> 
+        <Slideshow images={logement.pictures} /> 
       </div>
 
         <div className='housingSheet-center'>
@@ -66,7 +66,7 @@ function HousingSheet() {
       <div className='housingSheet-wraper'>    
         {/* Boucle pour afficher chaque élément du tableau dans un Collapse */}
         {dataCollapse.map((item, index) => (
-          <Collapse key={index} title={item.title} content={item.content} /> 
+          <Collapse key={index} title={item.title} content={item.content} />    
         ))}
       </div>
     </div>
