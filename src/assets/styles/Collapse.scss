@@ -1,8 +1,13 @@
-@import 'variables'; 
+@import 'variables';
+@import 'variablesMedia'; 
 
 .collapse {
     color: $secondary-color;
     font: $font-nav;
+
+    @media (max-width: 768px) {
+        font: 700 13px $font-text;
+    } 
 
     &-title {
         background-color: $tertiary-color;
@@ -11,9 +16,14 @@
         align-items: center;
         justify-content: space-between;
         padding-left: 10px;
-        border-radius: $card-border-radius;
+        border-radius: 5px;
         padding-right: 20px;
         cursor: pointer; // Ajoute un pointeur pour indiquer que c'est cliquable
+
+        @media (max-width: 768px) {
+            height: 30px;
+        }    
+
     }
 
     &-content {
@@ -37,6 +47,11 @@
         padding-top: 5px;
         padding-left: 10px;
         padding-bottom: 5px;
+
+        @media (max-width: 768px) {
+            font-size: 10px;
+            font-weight: 600;
+        }   
     }
 
     // styles pour le chevron
