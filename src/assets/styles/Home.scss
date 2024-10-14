@@ -1,18 +1,17 @@
 @import 'variables'; 
 @import 'variablesMedia';
 
-
 .home {
 
     &-banner { 
         background-image: $home-banner-background-image;
-        margin: $banner-margin; 
     }
 
     &-housing {
     background-color:  $superCard-color;
-    width: $banner-width;     
-    margin: $banner-margin;   
+    margin: $banner-margin;
+    margin-right: $margin-logo-hori;
+    margin-left: $margin-logo-hori;  
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 75px 0;
@@ -21,8 +20,7 @@
     padding-top: $superCard-padding;
     padding-bottom: $superCard-padding;
     margin-top: $superCard-margin;
-    margin-bottom: $superCard-margin;
-    
+    margin-bottom: $superCard-margin; 
     
         @media (max-width: 768px) {
             grid-template-columns: 1fr;
@@ -30,7 +28,10 @@
             padding-bottom: $media-superCard-padding;
             margin-top: $media-superCard-margin;
             margin-bottom: $media-superCard-margin;
+            margin-right: $media-margin-logo-hori;
+            margin-left: $media-margin-logo-hori; 
             gap: 15px;
+            background-color:  white;
         }
     
     }
@@ -44,7 +45,7 @@
         height: $card-width;
     
         @media (max-width: 768px) {
-            width: 86vw;
+            width: 100%;
         }
     
     }
