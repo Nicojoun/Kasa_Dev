@@ -4,10 +4,6 @@
 
     &-banner {
         background-image: $about-banner-background-image;
-
-        @media (max-width: 768px) {
-        }  
-
       }
 
     &-collapse {
@@ -20,8 +16,6 @@
             padding: 20px 3%;
         }  
     }      
-
-
 
   &-content {
       padding-top: 5px;
