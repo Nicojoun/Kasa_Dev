@@ -4,7 +4,7 @@
 .home {
 
     &-banner { 
-        background-image: $home-banner-background-image;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), $home-banner-background-image;
         margin-top: $superCard-margin;
     }
 
