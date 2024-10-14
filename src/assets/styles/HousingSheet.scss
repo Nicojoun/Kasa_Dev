@@ -12,8 +12,7 @@
         @media (max-width: 768px) {
             padding-right: $media-margin-logo-hori;
             padding-left: $media-margin-logo-hori;
-        }
-    
+        }    
 
     &-center { 
         display: flex;
@@ -74,8 +73,8 @@
     }
 
     &-wraper {
-        // display: grid;
-        // grid-template-columns: 1fr 1fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         // padding: 20px 10%;
         // width: 100vw;
         // gap: 0;
