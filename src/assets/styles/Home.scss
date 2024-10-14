@@ -23,7 +23,8 @@
     margin-bottom: $superCard-margin; 
     
         @media (max-width: 768px) {
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
             padding-top: $media-superCard-padding;
             padding-bottom: $media-superCard-padding;
             margin-top: $media-superCard-margin;
