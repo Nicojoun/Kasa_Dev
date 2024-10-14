@@ -14,13 +14,15 @@ function About() {
     <div className='about'>
       <Banner bannerClass='about-banner' />
       {/* Boucle pour afficher chaque élément du tableau dans un Collapse */}
+      <div className='about-collapse'>
       {dataCollapse.map((item, index) => (
-        <Collapse className='collapse'
+        <Collapse 
           key={index} 
           title={item.title} 
           content={item.content} 
         /> 
       ))}
+      </div>
     </div>
   );
 }
