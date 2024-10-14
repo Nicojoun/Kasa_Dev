@@ -9,6 +9,9 @@
     border-radius: 25px;
     margin-right: $margin-logo-hori;
     margin-left: $margin-logo-hori; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @media (max-width: 768px) {
         height: 111px;
@@ -22,14 +25,11 @@
         font: $font-banner;
         z-index: 1;           
         text-align: center;   
-        padding-top: 80px;
     
         @media (max-width: 768px) {
             text-align: left;
             font:$media-font-banner;
-            padding-left: 20px;
-            width: 190px;
-            padding-top: 30px;
+            padding-left: 5%;
         }
     
       }
