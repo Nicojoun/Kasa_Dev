@@ -9,7 +9,7 @@
     color: $secondary-color;
     text-align: center;
 
-    @media (max-width: 768px) {
+    @media (max-width: $media-queries-mobile) {
         font: $media-font-tag;
         padding: $media-padding-tag;
     }

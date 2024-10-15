@@ -1,4 +1,5 @@
-@import 'variables'; 
+@import 'variables';
+@import 'variablesMedia'; 
 
 .about {
 
@@ -12,7 +13,7 @@
         flex-direction: column;
         gap: 20px;
 
-        @media (max-width: 768px) {
+        @media (max-width: $media-queries-mobile) {
             padding: 20px 3%;
         }  
     }      

@@ -9,7 +9,7 @@
     padding-left: $margin-logo-hori; 
     z-index: 2;
 
-    @media (max-width: 768px) {
+    @media (max-width: $media-queries-mobile) {
         padding-top: $media-margin-logo-vert; 
         padding-right: $media-margin-logo-hori;
         padding-left: $media-margin-logo-hori;
@@ -23,7 +23,7 @@
     &-logo {
         height: $logo-height;
 
-        @media (max-width: 768px) {
+        @media (max-width: $media-queries-mobile) {
             height: $media-logo-height;
         }
     }
@@ -34,7 +34,7 @@
         font: $font-nav; 
         line-height: $font-nav-line-height; 
 
-        @media (max-width: 768px) {
+        @media (max-width: $media-queries-mobile) {
             font: $media-font-nav; 
             line-height: $media-font-nav-line-height; 
             position: relative;

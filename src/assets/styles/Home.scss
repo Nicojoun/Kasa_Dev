@@ -22,7 +22,7 @@
     margin-top: $superCard-margin;
     margin-bottom: $superCard-margin; 
     
-        @media (max-width: 768px) {
+        @media (max-width: $media-queries-mobile) {
             display: flex;
             flex-direction: column;
             padding-top: $media-superCard-padding;
@@ -45,7 +45,7 @@
         width: 25vw;
         height: $card-width;
     
-        @media (max-width: 768px) {
+        @media (max-width: $media-queries-mobile) {
             width: 100%;
         }
     
