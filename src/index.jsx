@@ -15,7 +15,9 @@ root.render(
     <Router>
       <div className='index'> 
         <Header /> 
-        <AppRoutes />
+        <div className='index-container'>
+          <AppRoutes />
+        </div>  
         <Footer />
       </div>
     </Router>

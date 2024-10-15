@@ -2,44 +2,27 @@
 @import 'variablesMedia'; 
 
 .header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding-top: $margin-logo-vert; 
-    padding-right: $margin-logo-hori;
-    padding-left: $margin-logo-hori; 
-    z-index: 2;
-
-    @media (max-width: $media-queries-mobile) {
-        padding-top: $media-margin-logo-vert; 
-        padding-right: $media-margin-logo-hori;
-        padding-left: $media-margin-logo-hori;
-    }
-
-
-    &-header-logoLink {
-        height: $logo-height;
-    }
+    max-width: $screen-maw-width;
 
     &-logo {
-        height: $logo-height;
+        height: 48px;
 
         @media (max-width: $media-queries-mobile) {
-            height: $media-logo-height;
+            height: 33px;
         }
     }
 
     &-nav {
         display: flex;
-        gap: $gap;
+        gap: 50px;
         font: $font-nav; 
-        line-height: $font-nav-line-height; 
 
         @media (max-width: $media-queries-mobile) {
             font: $media-font-nav; 
-            line-height: $media-font-nav-line-height; 
-            position: relative;
-            top: 20%;
-            gap: $media-gap;
+            gap: 25px;
         }
     }
 

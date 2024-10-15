@@ -3,14 +3,13 @@
 
 .footer {
     background-color: $primary-color;
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
-    padding: $padding-logo-white; 
 
     &-logo {
-        width: $logo-width;
+        width: 80px;
     }
 
     &-copyright {
@@ -18,10 +17,7 @@
 
         @media (max-width: $media-queries-mobile) {
             font: 500 12px 'Montserrat';
-            width: 90px;
         }
-    
-
     }
 
   }
