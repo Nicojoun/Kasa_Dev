@@ -3,15 +3,14 @@
 
 .tag {
     background-color: $tertiary-color;
-    padding: $padding-tag;
+    padding: 5px 20px;
     border-radius: $card-border-radius;
-    font: $font-tag;
+    font: 700 14px $font-text;
     color: $secondary-color;
     text-align: center;
 
     @media (max-width: $media-queries-mobile) {
-        font: $media-font-tag;
-        padding: $media-padding-tag;
+        font: 700 10px $font-text;
     }
 
 }

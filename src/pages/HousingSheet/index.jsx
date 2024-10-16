@@ -41,8 +41,10 @@ function HousingSheet() {
         <div className='housingSheet-center'>
 
           <div className='housingSheet-left'>
-            <h1 className='housingSheet-title'>{logement.title}</h1> 
-            <h2 className='housingSheet-location'>{logement.location}</h2> 
+            <div className='housingSheet-info'>
+              <span className='housingSheet-title'>{logement.title}</span> 
+              <h2 className='housingSheet-location'>{logement.location}</h2> 
+            </div>
             <div className='housingSheet-tagList'>
               {logement.tags.map((tag, index) => (
               <Tag key={index} text={tag} />  

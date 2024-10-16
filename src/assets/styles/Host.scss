@@ -7,16 +7,18 @@
     color: $secondary-color;
     display: flex;
     justify-content: end;
-    gap: 10px;
+    //gap: 30px;
 
     &-name {
         font: 500 18px 'Montserrat';
         color: $tertiary-color;
         display: flex;
         align-items: center;
-        max-width: 30%;
+        //max-width: 30%;
+
         text-align: right;
-        margin-right: 20px;
+        // margin-right: 20px;
+        //padding-right: 20px;
 
         @media (max-width: $media-queries-mobile) {
             font: 500 12px 'Montserrat';
