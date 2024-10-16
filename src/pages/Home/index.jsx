@@ -15,7 +15,6 @@ function Home() {
             <Card cardSrc={logement.cover} 
               cardTitle={logement.title}
               cardAlt={logement.title} 
-              cardClass='home-card' 
             /> 
           </Link>
         ))}

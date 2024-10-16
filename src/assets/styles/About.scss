@@ -2,26 +2,39 @@
 @import 'variablesMedia'; 
 
 .about {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-left: $screen-padding;
+  padding-right: $screen-padding;
+
+  @media (max-width: $media-queries-mobile) {
+    padding-left: $media-screen-padding;
+    padding-right: $media-screen-padding;
+} 
 
     &-banner {
         background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), $about-banner-background-image;
       }
 
     &-collapse {
-        padding: 3% 10% 2% 10%;
+        // width: 80%;
+        padding-left: 80px;
+        padding-right: 80px;
         display: flex;
         flex-direction: column;
+        // align-items: center;
         gap: 20px;
 
         @media (max-width: $media-queries-mobile) {
-            padding: 20px 3%;
+            padding: 0;
         }  
     }      
 
   &-content {
-      padding-top: 5px;
-      padding-left: 10px;
-      padding-bottom: 5px;
+      // padding-top: 5px;
+      // padding-left: 10px;
+      // padding-bottom: 5px;
   }
 
 }

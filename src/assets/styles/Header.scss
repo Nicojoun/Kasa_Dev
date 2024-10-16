@@ -9,20 +9,24 @@
 
     &-logo {
         height: 48px;
+        padding-left: $screen-padding;
 
         @media (max-width: $media-queries-mobile) {
             height: 33px;
+            padding-left: $media-screen-padding;
         }
     }
 
     &-nav {
         display: flex;
         gap: 50px;
+        padding-right: $screen-padding;
         font: $font-nav; 
 
         @media (max-width: $media-queries-mobile) {
             font: $media-font-nav; 
             gap: 25px;
+            padding-right: $media-screen-padding;
         }
     }
 

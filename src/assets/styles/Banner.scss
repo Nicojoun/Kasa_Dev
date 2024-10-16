@@ -2,34 +2,27 @@
 @import 'variablesMedia'; 
 
 .banner {
-    position: relative;  
     background-size: cover; 
     background-position: center;
-    height: $banner-height; 
+    height: 223px; 
     border-radius: 25px;
-    margin-right: $margin-logo-hori;
-    margin-left: $margin-logo-hori; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     @media (max-width: $media-queries-mobile) {
         height: 111px;
-        margin-right: $media-margin-logo-hori;
-        margin-left: $media-margin-logo-hori; 
-        border-radius: 10px;
     }
 
     &-title {
         color: $secondary-color;
-        font: $font-banner;
-        z-index: 1;           
-        text-align: center;   
+        font: 700 48px $font-text;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 50%;
     
         @media (max-width: $media-queries-mobile) {
-            text-align: left;
-            font:$media-font-banner;
-            padding-left: 5%;
+            font: 700 24px $font-text;
         }
     
       }

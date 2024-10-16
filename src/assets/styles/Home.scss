@@ -2,53 +2,42 @@
 @import 'variablesMedia';
 
 .home {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-left: $screen-padding;
+    padding-right: $screen-padding;
+
+    @media (max-width: $media-queries-mobile) {
+        gap: 10px;
+        padding-left: $media-screen-padding;
+        padding-right: $media-screen-padding;
+    }
 
     &-banner { 
         background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), $home-banner-background-image;
-        margin-top: $superCard-margin;
     }
 
     &-housing {
-    background-color:  $superCard-color;
-    margin-right: $margin-logo-hori;
-    margin-left: $margin-logo-hori;  
+    padding: 50px;
+    background-color:  #F6F6F6;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 75px 0;
-    justify-items: center; 
+    gap: 50px;
     border-radius: $card-border-radius;
-    padding-top: $superCard-padding;
-    padding-bottom: $superCard-padding;
-    margin-top: $superCard-margin;
-    margin-bottom: $superCard-margin; 
     
         @media (max-width: $media-queries-mobile) {
             display: flex;
             flex-direction: column;
-            padding-top: $media-superCard-padding;
-            padding-bottom: $media-superCard-padding;
-            margin-top: $media-superCard-margin;
-            margin-bottom: $media-superCard-margin;
-            margin-right: $media-margin-logo-hori;
-            margin-left: $media-margin-logo-hori; 
-            gap: 15px;
+            gap: 0px;
             background-color:  white;
+            padding: 0;
         }
     
     }
 
     &-linkHousing {
         text-decoration: none;
-    }
-
-    &-card {
-        width: 25vw;
-        height: $card-width;
-    
-        @media (max-width: $media-queries-mobile) {
-            width: 100%;
-        }
-    
     }
 
 }

@@ -2,14 +2,23 @@
 @import 'variablesMedia'; 
  
 .index {
+  font-family: $font-text;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  font-family: $font-text;
-
+  justify-content: space-between;
+  
   &-container {
     max-width: $screen-maw-width;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @media (max-width: $media-queries-mobile) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
   }
 
 }
