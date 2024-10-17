@@ -12,11 +12,17 @@
         border-radius: $card-border-radius;
         object-fit: cover;
     }
+
+    &-info {
+        height: 90px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
     
     &-title {
         font: $card-font;
         color: $secondary-color;
-        padding-left: 10px;
 
         @media (max-width: $media-queries-mobile) {
             padding-bottom: 10px;
