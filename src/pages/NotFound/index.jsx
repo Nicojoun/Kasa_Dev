@@ -6,10 +6,7 @@ function NotFound() {
     <div className='notFound' >
       <span className='notFound-404'>404</span>
       <div className='notFound-text'>
-        <div className='notFound-message'>
-          <span className='notFound-messageTop'>Oups! La page que </span>
-          <span className='notFound-messageBottom'>vous demandez n'existe pas.</span>  
-        </div>
+        <span className='notFound-message'>Oups! La page que vous demandez n'existe pas.</span>
         <Link to='/' className='notFound-linkBackHome'> 
           Retourner sur la page d’accueil
         </Link>
