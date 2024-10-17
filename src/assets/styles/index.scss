@@ -7,13 +7,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   
   &-container {
     max-width: $screen-maw-width;
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
+    flex: 1;
 
     @media (max-width: $media-queries-mobile) {
       padding-top: 10px;
