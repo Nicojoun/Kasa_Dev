@@ -3,7 +3,7 @@ import '../../assets/styles/Slideshow.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Importer les icônes
 
-function Slideshow({images, imagesClass}) {
+function Slideshow({images}) {
   const [currentSlide, setCurrentSlide] = useState(0); // Gestion de l'index de l'item actuelle
   const totalSlides = React.Children.count(images); // Nombre total de slides (enfants)
 
@@ -20,7 +20,7 @@ function Slideshow({images, imagesClass}) {
   };  
 
   return (
-    <div className='slideshow' style={{ backgroundImage: `url(${images[currentSlide]})` }}>
+    <div className='slideshow' style={{ backgroundImage: `url(${images[currentSlide]})`, backgroundSize: 'cover',}} >
       <div className='slideshow-chevrons' >
         <FontAwesomeIcon icon={faChevronLeft} onClick={prevSlide} className='slideshow-chevronPrev' />
         <FontAwesomeIcon icon={faChevronRight} onClick={nextSlide} className='slideshow-chevronNext' />
@@ -29,7 +29,6 @@ function Slideshow({images, imagesClass}) {
       <div className='slideshow-number' >
         {currentSlide + 1}/{totalSlides}
       </div>
-      {/* <img src={images[currentSlide]} alt={`Slide ${currentSlide + 1}`} className='slideshow-image' /> */}
     </div>
   );
 }
