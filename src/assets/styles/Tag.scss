@@ -8,9 +8,13 @@
     font: 700 14px $font-text;
     color: $secondary-color;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @media (max-width: $media-queries-mobile) {
         font: 700 10px $font-text;
+        padding: 5px 10px;
     }
 
 }

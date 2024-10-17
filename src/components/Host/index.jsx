@@ -6,7 +6,7 @@ const Host = ({ name, picture }) => {
 
   return (
     <div className='host'>
-      <span className='host-name'>{firstName}<br />{lastName}</span> {/* Nom de l'hôte */}
+      <span className='host-name'>{firstName}<br/>{lastName}</span> {/* Nom de l'hôte */}
       <img className='host-image' src={picture} alt={name} /> {/* Photo de l'hôte */}
     </div>
   );
