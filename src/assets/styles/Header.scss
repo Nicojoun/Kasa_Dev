@@ -6,7 +6,16 @@
     display: flex;
     justify-content: space-between;
     max-width: $screen-maw-width;
-    padding-top: 30px;
+    padding-top: 20px;
+
+    @media (max-width: $media-queries-mobile) {
+        padding-top: 0;
+    }
+
+    &-logoLink {
+        display: flex;
+        align-items: center;
+    }
 
     &-logo {
         height: 48px;
@@ -22,7 +31,7 @@
         display: flex;
         gap: 50px;
         padding-right: $screen-padding;
-        font: $font-nav; 
+        font: $font-nav;
 
         @media (max-width: $media-queries-mobile) {
             font: $media-font-nav; 
@@ -35,6 +44,8 @@
         text-decoration: $link-decoration;
         height: $logo-height;
         color: $primary-color;
+        display: flex;
+        align-items: center;
 
         &:hover {
             text-decoration: $link-decoration-hover; 
@@ -43,6 +54,8 @@
 
     &-linkActive {
         text-decoration: underline;
+        display: flex;
+        align-items: center;
     }
 
 }
