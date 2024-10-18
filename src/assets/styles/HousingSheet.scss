@@ -38,7 +38,7 @@
     }
 
     &-title {
-        font: $font-notFound-message;
+        font: 500 36px $font-text;
         color: $tertiary-color;
 
         @media (max-width: $media-queries-mobile) {
@@ -48,7 +48,7 @@
     }
 
     &-location {
-        font: $font-notFound-backHome;
+        font: 500 18px $font-text;
     }
 
     &-tagList {

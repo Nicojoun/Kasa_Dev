@@ -31,10 +31,10 @@
         display: flex;
         gap: 50px;
         padding-right: $screen-padding;
-        font: $font-nav;
+        font: 500 24px $font-text;;
 
         @media (max-width: $media-queries-mobile) {
-            font: $media-font-nav; 
+            font: 500 12px $font-text; 
             gap: 25px;
             padding-right: $media-screen-padding;
         }
@@ -42,7 +42,7 @@
 
     &-link {
         text-decoration: $link-decoration;
-        height: $logo-height;
+        height: 48px;
         color: $primary-color;
         display: flex;
         align-items: center;

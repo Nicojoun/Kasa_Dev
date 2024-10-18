@@ -2,8 +2,7 @@
 @import 'variablesMedia'; 
 
 .host {
-    border-radius: $card-border-radius;
-    font: $font-tag;
+    font: 700 14px $font-text;;
     color: $secondary-color;
     display: flex;
     justify-content: end;

@@ -3,7 +3,7 @@
 
 .collapse {
     color: $secondary-color;
-    font: $font-nav;
+    font: 500 24px $font-text;;
 
     @media (max-width: $media-queries-mobile) {
         font: 700 13px $font-text;

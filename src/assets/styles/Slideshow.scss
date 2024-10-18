@@ -3,7 +3,7 @@
 
 .slideshow {
     height: 415px;
-    border-radius: $cover-border-radius;
+    border-radius: 25px;
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -27,18 +27,16 @@
     }
 
     &-chevronPrev {
-        position: $slideShow-button-position;
-        left: $slideShow-button-distance-sides;
+        padding-left: 25px;
     }
 
     &-chevronNext {
-        position: $slideShow-button-position;
-        right: $slideShow-button-distance-sides;
+        padding-right: 25px;
     }
 
     &-number {   
         position: relative;
-        top: 30%;
+        top: 120px;
         color: $secondary-color;
         display: flex;
         justify-content: center;
