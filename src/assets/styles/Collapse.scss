@@ -27,7 +27,7 @@
     }
 
     &-content {
-        background-color: $superCard-color;
+        background-color: $fourth-color;
         overflow: hidden; // Cache le contenu qui dépasse
         transition: max-height 0.6s ease, opacity 2s; // Transition fluide pour le déploiement du contenu
         max-height: 0; // Hauteur initiale fermée
