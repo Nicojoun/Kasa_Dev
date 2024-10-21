@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'; // Utiliser un seul icône
 
 function Collapse({ title, content }) {
-  const [open, setOpen] = useState(false); // État pour gérer l'ouverture/fermeture
+  const [open, setOpen] = useState(false); // Etat pour gérer l'ouverture/fermeture
 
   return (
     <div className='collapse' >
